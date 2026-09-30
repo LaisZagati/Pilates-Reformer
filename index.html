@@ -66,11 +66,8 @@
 
       <section class="panel" aria-label="Script">
         <div class="voicetop">
-          <button class="btn" id="autoBtn" aria-pressed="false"></button>
           <button class="btn" id="readBtn"></button>
-          <div class="vstatus" aria-live="polite"><span id="voiceStatus"></span><button class="btn" id="skipBtn" hidden></button></div>
-        </div>
-        <details class="vset"><summary id="setLbl"></summary>
+          <details class="vset"><summary id="setLbl"></summary>
           <div class="voicebar">
             <label><span id="speedLbl"></span>
               <select id="rateSel"><option value="0.8">0.8×</option><option value="0.95">1×</option><option value="1.1">1.2×</option></select></label>
@@ -82,10 +79,16 @@
             <label><span id="voiceEnLbl"></span><select id="voiceEn"></select></label>
           </div>
         </details>
+        </div>
         <div class="script" id="script" tabindex="0"></div>
-        <div class="scriptbar">
-          <button class="btn" id="prevCue" data-i18n="prevLine"></button>
-          <button class="btn primary big" id="nextCue" data-i18n="nextLine"></button>
+        <div class="dock">
+          <p class="vhelp" id="voiceHelp" hidden></p>
+          <div class="vstatus" aria-live="polite"><span id="voiceStatus"></span><button class="btn" id="skipBtn" hidden></button></div>
+          <div class="scriptbar">
+            <button class="btn" id="prevCue" data-i18n="prevLine"></button>
+            <button class="btn" id="autoBtn" aria-pressed="false"></button>
+            <button class="btn primary big" id="nextCue" data-i18n="nextLine"></button>
+          </div>
         </div>
         <p class="hint" id="voiceNote"></p>
         <p class="hint" data-i18n="hint"></p>

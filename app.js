@@ -23,6 +23,9 @@ const UI = {
     readLine:"🔊 Leer frase", autoOn:"▶ Manos libres", autoOff:"■ Detener", speed:"Velocidad", gap:"Pausa entre frases",
     voiceHint:"Manos libres lee cada frase en voz alta, espera mientras haces las repeticiones y pasa sola a la siguiente, etapa tras etapa. Tecla P: iniciar o detener.",
     repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceEsLbl:"Voz en español", voiceEnLbl:"Voz en inglés", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!",
+    blocked:"No se oye el audio.", audioHelp:"¿Sin sonido? Sube el volumen, quita el modo silencio (iPhone) y comprueba que hay una voz en español instalada en los ajustes de texto a voz del móvil. Después toca Manos libres otra vez.",
+    pausedHidden:"Pausado: la pantalla se apagó o cambiaste de app. Toca Manos libres para continuar.",
+    inApp:"Para escuchar el audio, abre esta página en Safari o Chrome (menú ••• → Abrir en el navegador).",
     noSynth:"Este navegador no puede leer en voz alta. Prueba con Chrome, Safari o Edge.",
     noVoice:"No hay voz en {l} en este dispositivo. Añádela en los ajustes de voz / texto a voz del sistema.", es:"español", en:"inglés"
   },
@@ -44,6 +47,9 @@ const UI = {
     readLine:"🔊 Read line", autoOn:"▶ Hands-free", autoOff:"■ Stop", speed:"Speed", gap:"Pause between lines",
     voiceHint:"Hands-free reads each line aloud, waits while you do the reps, then moves on by itself, stage after stage. Key P: start or stop.",
     repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceEsLbl:"Spanish voice", voiceEnLbl:"English voice", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!",
+    blocked:"No audio is playing.", audioHelp:"No sound? Turn up the volume, switch off silent mode (iPhone), and check a Spanish voice is installed in your phone's text-to-speech settings. Then tap Hands-free again.",
+    pausedHidden:"Paused: the screen turned off or you switched apps. Tap Hands-free to continue.",
+    inApp:"To hear the audio, open this page in Safari or Chrome (menu ••• → Open in browser).",
     noSynth:"This browser can't read aloud. Try Chrome, Safari or Edge.",
     noVoice:"No {l} voice on this device. Add one in your system's text-to-speech settings.", es:"Spanish", en:"English"
   }
@@ -679,17 +685,25 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'){e.preventDefault();setCue(cue-1)}
 });
 
-/* ---------- Voice: reads the cues aloud (browser text-to-speech) ---------- */
+/* ---------- Voice: reads the cues aloud (browser text-to-speech) ----------
+   Mobile rules this follows:
+   - iPhone/iPad only allow speech that starts inside a tap, so the first line is spoken
+     synchronously in the button handler (no waiting before speak()).
+   - If speech never starts (blocked, no voice, silent mode) we stop and show help,
+     instead of silently running through the class.
+   - Phones stop speech when the screen turns off, so we keep the screen awake and
+     pause cleanly if the page is hidden.                                              */
 const synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
-let voices=[], autoOn=false, speakToken=0, wakeLock=null, skipWait=null;
+const inApp = /Instagram|FBAN|FBAV|FB_IAB|Line\/|TikTok|Pinterest|Snapchat|; wv\)/i.test(navigator.userAgent);
+let voices=[], autoOn=false, speakToken=0, wakeLock=null, skipWait=null, pausedByHide=false;
 let rate=store.get('rate',0.95), gap=store.get('gap',1.5), repSec=store.get('repSec',3);
 function loadVoices(){try{voices=synth?synth.getVoices():[]}catch(e){voices=[]}fillVoices();updateVoiceUI()}
-if(synth){loadVoices();synth.onvoiceschanged=loadVoices}
+if(synth){loadVoices(); if('onvoiceschanged' in synth)synth.onvoiceschanged=loadVoices; setTimeout(loadVoices,700); setTimeout(loadVoices,2500)}
 const langOf=v=>(v.lang||'').replace('_','-').toLowerCase();
 function voiceFor(lang){
   const saved=store.get('voice_'+lang,''); if(saved){const v=voices.find(v=>v.voiceURI===saved);if(v)return v}
   const pref=lang==='es'?['es-es','es-mx','es-us','es']:['en-gb','en-us','en'];
-  for(const p of pref){const v=voices.find(v=>langOf(v).startsWith(p));if(v)return v}
+  for(const p of pref){const list=voices.filter(v=>langOf(v).startsWith(p)); if(list.length) return list.find(v=>v.localService)||list[0]}
   return null;
 }
 function fillVoices(){
@@ -697,25 +711,32 @@ function fillVoices(){
     const sel=$(lang==='es'?'voiceEs':'voiceEn'); if(!sel)return;
     const list=voices.filter(v=>langOf(v).startsWith(lang));
     sel.innerHTML=`<option value="">${T('autoVoice')}</option>`+list.map(v=>`<option value="${v.voiceURI.replace(/"/g,'&quot;')}">${v.name} (${v.lang})</option>`).join('');
-    sel.value=store.get('voice_'+lang,''); if(sel.value!==store.get('voice_'+lang,''))sel.value='';
+    const saved=store.get('voice_'+lang,''); sel.value=saved; if(sel.value!==saved)sel.value='';
   });
 }
+/* Speak one text. Resolves {started:boolean}. speak() is called synchronously. */
 function say(text,lang){return new Promise(res=>{
-  if(!synth){res();return}
+  if(!synth){res({started:false});return}
   const u=new SpeechSynthesisUtterance(text.replace(/\.\.\.$/,'…'));
-  u.lang=lang==='es'?'es-ES':'en-GB'; const v=voiceFor(lang); if(v){u.voice=v;u.lang=v.lang} u.rate=rate;
-  let fin=false; const end=()=>{if(!fin){fin=true;res()}};
-  u.onend=end; u.onerror=end;
-  setTimeout(end,1800+text.length*110/rate);   // safety net if a browser never fires onend
-  synth.speak(u);
+  const v=voiceFor(lang); u.lang=v?v.lang:(lang==='es'?'es-ES':'en-GB'); if(v)u.voice=v; u.rate=rate;
+  let started=false, fin=false, endTimer=null;
+  const end=()=>{if(fin)return; fin=true; clearTimeout(endTimer); clearTimeout(startTimer); res({started})};
+  u.onstart=()=>{started=true; clearTimeout(startTimer);
+    endTimer=setTimeout(end,2500+text.length*140/rate)};   // safety net if onend never fires (some Android phones)
+  u.onend=end;
+  u.onerror=e=>{ if(e&&e.error==='interrupted'||e&&e.error==='canceled'){started=true} end() };
+  const startTimer=setTimeout(()=>{ if(!started){ try{synth.cancel()}catch(e){} end() } },4000);
+  try{ if(synth.paused)synth.resume(); synth.speak(u) }catch(e){ end() }
 })}
-const sayLine=async(l,token)=>{
-  if(mode==='both'){await say(l.es,'es'); if(token===speakToken)await say(l.en,'en')}
-  else await say(l[mode],mode);
-};
-function setStatus(text,canSkip){
-  $('voiceStatus').textContent=text||''; $('skipBtn').hidden=!canSkip;
+async function sayLine(l,token){
+  if(mode==='both'){
+    const r=await say(l.es,'es'); if(token!==speakToken||!r.started)return r;
+    return await say(l.en,'en');
+  }
+  return await say(l[mode],mode);
 }
+function setStatus(text,canSkip){ $('voiceStatus').textContent=text||''; $('skipBtn').hidden=!canSkip; }
+function showHelp(on,msg){ const h=$('voiceHelp'); h.hidden=!on; if(on)h.textContent=msg||T('audioHelp'); }
 function markSpeaking(on){cueEls.forEach(b=>b.classList.remove('speaking'));if(on&&cueEls[cue])cueEls[cue].classList.add('speaking')}
 function repsAfter(){
   const ls=STAGES[cur].lines; let seen=-1;
@@ -730,30 +751,35 @@ function wait(secs,token,key){return new Promise(res=>{
   function done(){clearInterval(iv);skipWait=null;res()}
   skipWait=done;
 })}
+function clearCounting(){document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'))}
+/* Must stay free of `await` before the first say(): that keeps speech inside the tap on iOS. */
 async function speakCurrent(){
   const token=++speakToken; if(skipWait)skipWait();
-  if(synth)synth.cancel();
-  document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'));
+  if(synth&&(synth.speaking||synth.pending)){try{synth.cancel()}catch(e){}}
+  clearCounting();
   const l=STAGES[cur].lines.filter(x=>x.k==='c')[cue]; if(!l)return;
-  await new Promise(r=>setTimeout(r,60));            // some browsers drop speech right after cancel()
-  if(token!==speakToken)return;
-  markSpeaking(true); setStatus(T('speaking'));
-  await sayLine(l,token);
+  markSpeaking(true); setStatus(T('speaking')); showHelp(false);
+  const r=await sayLine(l,token);
   if(token!==speakToken)return;
   markSpeaking(false);
+  if(!r.started){ blocked(); return }
   if(!autoOn){setStatus('');return}
-  const r=repsAfter();
-  if(r){
-    await sayLine(r,token); if(token!==speakToken)return;
-    const secs=repCount(r)*repSec;
+  const reps=repsAfter();
+  if(reps){
+    await sayLine(reps,token); if(token!==speakToken)return;
+    const secs=repCount(reps)*repSec;
     if(secs>0){
       const badge=cueEls[cue]&&cueEls[cue].nextElementSibling;
       if(badge&&badge.classList.contains('reps'))badge.classList.add('counting');
       await wait(secs,token,'repsLeft');
-      if(badge)badge.classList.remove('counting');
+      clearCounting();
     }
   } else await wait(gap,token,'nextIn');
   if(token===speakToken&&autoOn)advanceAuto();
+}
+function blocked(){
+  const wasAuto=autoOn; if(wasAuto)stopAuto();
+  setStatus(T('blocked')); showHelp(true, inApp?T('inApp'):T('audioHelp'));
 }
 function advanceAuto(){
   if(cue<cueEls.length-1)setCue(cue+1);
@@ -762,19 +788,19 @@ function advanceAuto(){
   speakCurrent();
 }
 async function keepAwake(on){
-  try{ if(on&&'wakeLock' in navigator){wakeLock=await navigator.wakeLock.request('screen')}
+  try{ if(on&&'wakeLock' in navigator){ if(!wakeLock){wakeLock=await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release',()=>{wakeLock=null})} }
        else if(!on&&wakeLock){await wakeLock.release();wakeLock=null} }catch(e){}
 }
-function unlockSpeech(){try{if(synth&&!synth.speaking){const u=new SpeechSynthesisUtterance(' ');u.volume=0;synth.speak(u)}}catch(e){}}  // iOS needs a first utterance inside a tap
 function startAuto(){
-  unlockSpeech(); autoOn=true; keepAwake(true);
+  autoOn=true; pausedByHide=false;
   if(!running){running=true;classBtnText()}
-  updateVoiceUI(); speakCurrent();
+  updateVoiceUI();
+  speakCurrent();            // called synchronously inside the tap
+  keepAwake(true);
 }
 function stopAuto(){
   autoOn=false; speakToken++; if(skipWait)skipWait();
-  if(synth)synth.cancel(); markSpeaking(false); keepAwake(false); updateVoiceUI(); setStatus('');
-  document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'));
+  if(synth){try{synth.cancel()}catch(e){}} markSpeaking(false); keepAwake(false); updateVoiceUI(); setStatus(''); clearCounting();
 }
 function updateVoiceUI(){
   const ab=$('autoBtn'), rb=$('readBtn'); if(!ab)return;
@@ -784,8 +810,10 @@ function updateVoiceUI(){
   $('voiceEsLbl').textContent=T('voiceEsLbl'); $('voiceEnLbl').textContent=T('voiceEnLbl');
   $('repSel').options[0].textContent=T('repsOff');
   const va=$('voiceEs').options[0], vb=$('voiceEn').options[0]; if(va)va.textContent=T('autoVoice'); if(vb)vb.textContent=T('autoVoice');
+  $('prevCue').setAttribute('aria-label',T('prevLine'));
   let note='';
-  if(!synth){note=T('noSynth');ab.disabled=rb.disabled=true}
+  if(!synth){note=inApp?T('inApp'):T('noSynth');ab.disabled=rb.disabled=true}
+  else if(inApp){note=T('inApp')}
   else if(voices.length){
     const need=mode==='both'?['es','en']:[mode];
     const miss=need.filter(l=>!voiceFor(l));
@@ -793,7 +821,7 @@ function updateVoiceUI(){
   }
   $('voiceNote').textContent=note||T('voiceHint');
 }
-$('readBtn').onclick=()=>{unlockSpeech();speakCurrent()};
+$('readBtn').onclick=()=>{ if(autoOn)stopAuto(); speakCurrent() };
 $('autoBtn').onclick=()=>autoOn?stopAuto():startAuto();
 $('skipBtn').onclick=()=>{if(skipWait)skipWait()};
 $('rateSel').value=String(rate); $('gapSel').value=String(gap); $('repSel').value=String(repSec);
@@ -806,6 +834,9 @@ document.addEventListener('keydown',e=>{
   if(e.target.tagName==='SELECT'||e.ctrlKey||e.metaKey)return;
   if(e.key==='p'||e.key==='P'){e.preventDefault();autoOn?stopAuto():startAuto()}
 });
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&autoOn)keepAwake(true)});
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){ if(autoOn){stopAuto();pausedByHide=true} }
+  else if(pausedByHide){ pausedByHide=false; setStatus(T('pausedHidden')) }
+});
 
 applyUI();
