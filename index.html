@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pilates Reformer — Class Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <button class="btn mobnav" id="menuBtn" aria-expanded="false" aria-controls="rail" data-i18n="stages">Stages</button>
+  <h1><span data-i18n="title">Pilates Reformer</span><small data-i18n="sub"></small></h1>
+  <div class="lang" role="group" aria-label="Language / Idioma">
+    <button id="langES" aria-pressed="false">ES</button>
+    <button id="langEN" aria-pressed="false">EN</button>
+    <button id="langBoth" aria-pressed="false">ES+EN</button>
+  </div>
+  <span class="clock" id="classClock" aria-label="Total class time">00:00</span>
+  <button class="btn primary" id="classBtn"></button>
+  <button class="btn" id="resetBtn" data-i18n="reset">Reset</button>
+  <button class="btn" id="fsDown" aria-label="A−">A−</button>
+  <button class="btn" id="fsUp" aria-label="A+">A+</button>
+  <button class="btn" id="themeBtn" aria-label="Light / dark">◐</button>
+</header>
+
+<div class="wrap">
+  <nav class="rail" id="rail" aria-label="Class stages">
+    <ol id="stageList"></ol>
+    <div class="railinfo">
+      <p><b data-i18n="objLabel"></b> <span data-i18n="objective"></span></p>
+      <p><b data-i18n="noteLabel"></b> <span data-i18n="note"></span></p>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="stagehead">
+      <span class="num" id="sNum">1</span>
+      <div>
+        <h2 id="sTitle"></h2>
+        <div class="en" id="sEn"></div>
+      </div>
+      <div class="stagetimer">
+        <div class="t" id="sClock">00:00</div>
+        <div class="lbl" id="sTarget"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <section class="panel demo" aria-label="Demo">
+        <div class="demo-title"><span id="demoName"></span>
+          <select id="demoPick" aria-label="Demo"></select>
+        </div>
+        <svg id="stage" viewBox="0 0 600 240" role="img" aria-label="Reformer animation"></svg>
+        <div class="phase">
+          <b id="phaseTxt"></b>
+          <span>
+            <button class="btn" id="slowBtn"></button>
+            <button class="btn" id="playBtn"></button>
+          </span>
+        </div>
+        <div class="how" id="how"></div>
+      </section>
+
+      <section class="panel" aria-label="Script">
+        <div class="script" id="script" tabindex="0"></div>
+        <div class="scriptbar">
+          <button class="btn" id="prevCue" data-i18n="prevLine"></button>
+          <button class="btn primary big" id="nextCue" data-i18n="nextLine"></button>
+        </div>
+        <p class="hint" data-i18n="hint"></p>
+      </section>
+    </div>
+
+    <div class="stagenav">
+      <button class="btn" id="prevStage" data-i18n="prevStage"></button>
+      <button class="btn primary" id="nextStage"></button>
+    </div>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
