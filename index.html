@@ -23,7 +23,7 @@
   <button class="btn" id="resetBtn" data-i18n="reset">Reset</button>
   <button class="btn" id="fsDown" aria-label="A−">A−</button>
   <button class="btn" id="fsUp" aria-label="A+">A+</button>
-  <button class="btn" id="themeBtn" aria-label="Light / dark">◐</button>
+  <button class="btn" id="themeBtn" aria-label="Light / dark"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="display:block"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
 </header>
 
 <div class="wrap">
@@ -65,11 +65,29 @@
       </section>
 
       <section class="panel" aria-label="Script">
+        <div class="voicetop">
+          <button class="btn" id="autoBtn" aria-pressed="false"></button>
+          <button class="btn" id="readBtn"></button>
+          <div class="vstatus" aria-live="polite"><span id="voiceStatus"></span><button class="btn" id="skipBtn" hidden></button></div>
+        </div>
+        <details class="vset"><summary id="setLbl"></summary>
+          <div class="voicebar">
+            <label><span id="speedLbl"></span>
+              <select id="rateSel"><option value="0.8">0.8×</option><option value="0.95">1×</option><option value="1.1">1.2×</option></select></label>
+            <label><span id="gapLbl"></span>
+              <select id="gapSel"><option value="1">1 s</option><option value="1.5">1.5 s</option><option value="2.5">2.5 s</option><option value="4">4 s</option></select></label>
+            <label><span id="repsLbl"></span>
+              <select id="repSel"><option value="0"></option><option value="2">2 s</option><option value="3">3 s</option><option value="5">5 s</option></select></label>
+            <label><span id="voiceEsLbl"></span><select id="voiceEs"></select></label>
+            <label><span id="voiceEnLbl"></span><select id="voiceEn"></select></label>
+          </div>
+        </details>
         <div class="script" id="script" tabindex="0"></div>
         <div class="scriptbar">
           <button class="btn" id="prevCue" data-i18n="prevLine"></button>
           <button class="btn primary big" id="nextCue" data-i18n="nextLine"></button>
         </div>
+        <p class="hint" id="voiceNote"></p>
         <p class="hint" data-i18n="hint"></p>
       </section>
     </div>
