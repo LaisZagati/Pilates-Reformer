@@ -22,7 +22,7 @@ const UI = {
     side:"tumbada de lado — pierna de arriba en la barra", bar:"barra", springs:"muelles",
     readLine:"🔊 Leer frase", autoOn:"▶ Manos libres", autoOff:"■ Detener", speed:"Velocidad", gap:"Pausa entre frases",
     voiceHint:"Manos libres lee cada frase en voz alta, espera mientras haces las repeticiones y pasa sola a la siguiente, etapa tras etapa. Tecla P: iniciar o detener.",
-    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceEsLbl:"Voz en español", voiceEnLbl:"Voz en inglés", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!", testBtn:"Probar audio", testLine:"Hola, esto es una prueba de audio.",
+    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceLbl:"Voz", female:"Mujer", male:"Hombre", missF:"no hay voz de mujer", missM:"no hay voz de hombre", sample:"Hola, esta es tu voz para la clase.", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!", testBtn:"Probar audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No se oye el audio.", audioHelp:"¿Sin sonido? Sube el volumen, quita el modo silencio (iPhone) y comprueba que hay una voz en español instalada en los ajustes de texto a voz del móvil. Después toca Manos libres otra vez.",
     pausedHidden:"Pausado: la pantalla se apagó o cambiaste de app. Toca Manos libres para continuar.",
     inApp:"Para escuchar el audio, abre esta página en Safari o Chrome (menú ••• → Abrir en el navegador).",
@@ -46,7 +46,7 @@ const UI = {
     side:"lying on the side — top leg on the footbar", bar:"footbar", springs:"springs",
     readLine:"🔊 Read line", autoOn:"▶ Hands-free", autoOff:"■ Stop", speed:"Speed", gap:"Pause between lines",
     voiceHint:"Hands-free reads each line aloud, waits while you do the reps, then moves on by itself, stage after stage. Key P: start or stop.",
-    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceEsLbl:"Spanish voice", voiceEnLbl:"English voice", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!", testBtn:"Test audio", testLine:"Hola, esto es una prueba de audio.",
+    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceLbl:"Voice", female:"Female", male:"Male", missF:"no female voice", missM:"no male voice", sample:"Hi, this is your class voice.", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!", testBtn:"Test audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No audio is playing.", audioHelp:"No sound? Turn up the volume, switch off silent mode (iPhone), and check a Spanish voice is installed in your phone's text-to-speech settings. Then tap Hands-free again.",
     pausedHidden:"Paused: the screen turned off or you switched apps. Tap Hands-free to continue.",
     inApp:"To hear the audio, open this page in Safari or Chrome (menu ••• → Open in browser).",
@@ -685,69 +685,52 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'){e.preventDefault();setCue(cue-1)}
 });
 
-/* ---------- Voice: reads the cues aloud (browser text-to-speech) ----------
-   Mobile rules this follows:
-   - iPhone/iPad only allow speech that starts inside a tap, so the first line is spoken
-     synchronously in the button handler (no waiting before speak()).
-   - If speech never starts (blocked, no voice, silent mode) we stop and show help,
-     instead of silently running through the class.
-   - Phones stop speech when the screen turns off, so we keep the screen awake and
-     pause cleanly if the page is hidden.                                              */
+/* ---------- Voice: reads the cues aloud (browser text-to-speech) ---------- */
 const synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
-const inApp = /Instagram|FBAN|FBAV|FB_IAB|Line\/|TikTok|Pinterest|Snapchat|; wv\)/i.test(navigator.userAgent);
-let voices=[], autoOn=false, speakToken=0, wakeLock=null, skipWait=null, pausedByHide=false;
+let voices=[], autoOn=false, speakToken=0, wakeLock=null, skipWait=null;
 let rate=store.get('rate',0.95), gap=store.get('gap',1.5), repSec=store.get('repSec',3);
 function loadVoices(){try{voices=synth?synth.getVoices():[]}catch(e){voices=[]}fillVoices();updateVoiceUI()}
-if(synth){loadVoices(); if('onvoiceschanged' in synth)synth.onvoiceschanged=loadVoices; setTimeout(loadVoices,700); setTimeout(loadVoices,2500)}
 const langOf=v=>(v.lang||'').replace('_','-').toLowerCase();
+/* Voice choice: just Female / Male. On browsers that have Google voices (Chrome on a
+   computer) only those are used, because the system voices listed there are often silent. */
+let gender=store.get('gender','f');
+const badVoices=new Set();
+const FEMALE=/female|samantha|karen|moira|tessa|victoria|fiona|veena|serena|allison|\bava\b|susan|zira|hazel|catherine|m[oó]nica|paulina|marisol|soledad|helena|laura|sabina|elvira|dalia|luciana|francisca|google us english|^google español$/i;
+const MALE=/\bmale\b|daniel|\balex\b|fred|rishi|oliver|arthur|aaron|\btom\b|david|\bmark\b|george|james|jorge|juan|diego|carlos|pablo|ra[uú]l|[aá]lvaro|enrique|jos[eé]/i;
+const isF=v=>FEMALE.test(v.name), isM=v=>!isF(v)&&MALE.test(v.name);
+function voicePool(lang){
+  const NOVELTY=/bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|kathy|ralph|junior|eddy|\bflo\b|grandma|grandpa|\breed\b|rocko|sandy|shelley/i;
+  const any=voices.filter(v=>langOf(v).startsWith(lang)&&!badVoices.has(v.voiceURI));
+  const all=any.filter(v=>!NOVELTY.test(v.name)).length?any.filter(v=>!NOVELTY.test(v.name)):any;
+  const google=all.filter(v=>/^google/i.test(v.name));
+  const pool=google.length?google:all;
+  const reg=lang==='es'?['es-es','es-mx','es-us']:['en-gb','en-us'];
+  const rank=v=>{const i=reg.findIndex(r=>langOf(v).startsWith(r));return i<0?9:i};
+  return pool.slice().sort((x,y)=>rank(x)-rank(y));
+}
 function voiceFor(lang){
-  const saved=store.get('voice_'+lang,''); if(saved){const v=voices.find(v=>v.voiceURI===saved);if(v)return v}
-  const pref=lang==='es'?['es-es','es-mx','es-us','es']:['en-gb','en-us','en'];
-  for(const p of pref){const v=voices.find(v=>langOf(v).startsWith(p)); if(v)return v}
-  return null;
+  const pool=voicePool(lang); if(!pool.length)return null;
+  const want=gender==='m'?isM:isF;
+  return pool.find(want) || pool.find(v=>!isF(v)&&!isM(v)) || pool[0];
 }
-function fillVoices(){
-  ['es','en'].forEach(lang=>{
-    const sel=$(lang==='es'?'voiceEs':'voiceEn'); if(!sel)return;
-    const list=voices.filter(v=>langOf(v).startsWith(lang));
-    sel.innerHTML=`<option value="">${T('autoVoice')}</option>`+list.map(v=>`<option value="${v.voiceURI.replace(/"/g,'&quot;')}">${v.name} (${v.lang})</option>`).join('');
-    const saved=store.get('voice_'+lang,''); sel.value=saved; if(sel.value!==saved)sel.value='';
-  });
-}
-/* Speak one text. Resolves {started, error}. speak() is called synchronously.
-   Phones don't always fire onstart/onend, so ANY sign of life counts as "started":
-   onstart, onend, or synth.speaking seen true while polling. We never cancel speech
-   just because an event is missing. */
-let lastErr='';
-window.__utts=[];                                   // keep utterances referenced (avoids a Chrome/Safari GC bug)
+function fillVoices(){}   // no long voice lists any more
+if(synth){loadVoices(); synth.onvoiceschanged=loadVoices; setTimeout(loadVoices,800); setTimeout(loadVoices,2500)}   // mobile browsers load voices late
 function say(text,lang){return new Promise(res=>{
-  if(!synth){res({started:false,error:'no-synth'});return}
+  if(!synth){res();return}
   const u=new SpeechSynthesisUtterance(text.replace(/\.\.\.$/,'…'));
-  const v=voiceFor(lang);
-  u.lang=(v&&v.lang?v.lang:(lang==='es'?'es-ES':'en-GB')).replace('_','-');
-  if(v)u.voice=v; u.rate=rate; u.volume=1;
-  window.__utts.push(u); if(window.__utts.length>6)window.__utts.shift();
-  let started=false, fin=false, err='';
-  const poll=setInterval(()=>{ if(synth.speaking)started=true },200);
-  const end=()=>{ if(fin)return; fin=true; clearInterval(poll); clearTimeout(noStart); clearTimeout(maxT); res({started,error:err}) };
-  u.onstart=()=>{started=true};
-  u.onend=()=>{started=true; end()};
-  u.onerror=e=>{ err=(e&&e.error)||'error'; lastErr=err; if(err==='interrupted'||err==='canceled')started=true; end() };
-  // no sign of life at all after 5 s -> report as not started (but don't cancel anything)
-  const noStart=setTimeout(()=>{ if(!started&&!synth.speaking&&!synth.pending)end() },5000);
-  // safety net if onend never fires
-  const maxT=setTimeout(end,6000+text.length*160/rate);
-  try{ if(synth.paused)synth.resume(); synth.speak(u) }catch(e){ err=String(e); end() }
+  u.lang=lang==='es'?'es-ES':'en-GB'; const v=voiceFor(lang); if(v){try{u.voice=v;u.lang=v.lang}catch(e){}} u.rate=rate;
+  let fin=false; const end=()=>{if(!fin){fin=true;res()}};
+  u.onend=end; u.onerror=e=>{ const er=e&&e.error; if(v&&er&&er!=='interrupted'&&er!=='canceled')badVoices.add(v.voiceURI); end() };
+  setTimeout(end,1800+text.length*110/rate);   // safety net if a browser never fires onend
+  synth.speak(u);
 })}
-async function sayLine(l,token){
-  if(mode==='both'){
-    const r=await say(l.es,'es'); if(token!==speakToken||!r.started)return r;
-    return await say(l.en,'en');
-  }
-  return await say(l[mode],mode);
+const sayLine=async(l,token)=>{
+  if(mode==='both'){await say(l.es,'es'); if(token===speakToken)await say(l.en,'en')}
+  else await say(l[mode],mode);
+};
+function setStatus(text,canSkip){
+  $('voiceStatus').textContent=text||''; $('skipBtn').hidden=!canSkip;
 }
-function setStatus(text,canSkip){ $('voiceStatus').textContent=text||''; $('skipBtn').hidden=!canSkip; }
-function showHelp(on,msg){ const h=$('voiceHelp'); h.hidden=!on; if(on)h.textContent=msg||T('audioHelp'); }
 function markSpeaking(on){cueEls.forEach(b=>b.classList.remove('speaking'));if(on&&cueEls[cue])cueEls[cue].classList.add('speaking')}
 function repsAfter(){
   const ls=STAGES[cur].lines; let seen=-1;
@@ -762,37 +745,30 @@ function wait(secs,token,key){return new Promise(res=>{
   function done(){clearInterval(iv);skipWait=null;res()}
   skipWait=done;
 })}
-function clearCounting(){document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'))}
-/* Must stay free of `await` before the first say(): that keeps speech inside the tap on iOS. */
 async function speakCurrent(){
   const token=++speakToken; if(skipWait)skipWait();
-  const busy=synth&&(synth.speaking||synth.pending);
-  if(busy){try{synth.cancel()}catch(e){}}
-  clearCounting();
+  if(synth)synth.cancel();
+  document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'));
   const l=STAGES[cur].lines.filter(x=>x.k==='c')[cue]; if(!l)return;
-  markSpeaking(true); setStatus(T('speaking')); showHelp(false);
-  if(busy){ await new Promise(r=>setTimeout(r,120)); if(token!==speakToken)return }   // engines drop speech right after cancel()
-  const r=await sayLine(l,token);
+  await new Promise(r=>setTimeout(r,60));            // some browsers drop speech right after cancel()
+  if(token!==speakToken)return;
+  markSpeaking(true); setStatus(T('speaking'));
+  await sayLine(l,token);
   if(token!==speakToken)return;
   markSpeaking(false);
-  if(!r.started){ blocked(); return }
   if(!autoOn){setStatus('');return}
-  const reps=repsAfter();
-  if(reps){
-    await sayLine(reps,token); if(token!==speakToken)return;
-    const secs=repCount(reps)*repSec;
+  const r=repsAfter();
+  if(r){
+    await sayLine(r,token); if(token!==speakToken)return;
+    const secs=repCount(r)*repSec;
     if(secs>0){
       const badge=cueEls[cue]&&cueEls[cue].nextElementSibling;
       if(badge&&badge.classList.contains('reps'))badge.classList.add('counting');
       await wait(secs,token,'repsLeft');
-      clearCounting();
+      if(badge)badge.classList.remove('counting');
     }
   } else await wait(gap,token,'nextIn');
   if(token===speakToken&&autoOn)advanceAuto();
-}
-function blocked(){
-  const wasAuto=autoOn; if(wasAuto)stopAuto();
-  setStatus(T('blocked')); showHelp(true, inApp?T('inApp'):T('audioHelp'));
 }
 function advanceAuto(){
   if(cue<cueEls.length-1)setCue(cue+1);
@@ -801,32 +777,35 @@ function advanceAuto(){
   speakCurrent();
 }
 async function keepAwake(on){
-  try{ if(on&&'wakeLock' in navigator){ if(!wakeLock){wakeLock=await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release',()=>{wakeLock=null})} }
+  try{ if(on&&'wakeLock' in navigator){wakeLock=await navigator.wakeLock.request('screen')}
        else if(!on&&wakeLock){await wakeLock.release();wakeLock=null} }catch(e){}
 }
+function unlockSpeech(){try{if(synth&&!synth.speaking){const u=new SpeechSynthesisUtterance(' ');u.volume=0;synth.speak(u)}}catch(e){}}  // iOS needs a first utterance inside a tap
 function startAuto(){
-  autoOn=true; pausedByHide=false;
+  unlockSpeech(); autoOn=true; keepAwake(true);
   if(!running){running=true;classBtnText()}
-  updateVoiceUI();
-  speakCurrent();            // called synchronously inside the tap
-  keepAwake(true);
+  updateVoiceUI(); speakCurrent();
 }
 function stopAuto(){
   autoOn=false; speakToken++; if(skipWait)skipWait();
-  if(synth){try{synth.cancel()}catch(e){}} markSpeaking(false); keepAwake(false); updateVoiceUI(); setStatus(''); clearCounting();
+  if(synth)synth.cancel(); markSpeaking(false); keepAwake(false); updateVoiceUI(); setStatus('');
+  document.querySelectorAll('.reps.counting').forEach(r=>r.classList.remove('counting'));
 }
 function updateVoiceUI(){
   const ab=$('autoBtn'), rb=$('readBtn'); if(!ab)return;
   ab.textContent=autoOn?T('autoOff'):T('autoOn'); ab.classList.toggle('primary',autoOn); ab.setAttribute('aria-pressed',String(autoOn));
-  rb.textContent=T('readLine'); $('testBtn').textContent=T('testBtn'); $('skipBtn').textContent=T('skip');
+  rb.textContent=T('readLine'); if($('testBtn'))$('testBtn').textContent=T('testBtn'); $('skipBtn').textContent=T('skip');
   $('speedLbl').textContent=T('speed'); $('gapLbl').textContent=T('gap'); $('repsLbl').textContent=T('repsLbl'); $('setLbl').textContent=T('setLbl');
-  $('voiceEsLbl').textContent=T('voiceEsLbl'); $('voiceEnLbl').textContent=T('voiceEnLbl');
+  $('voiceLbl').textContent=T('voiceLbl'); $('gF').textContent=T('female'); $('gM').textContent=T('male');
+  $('gF').setAttribute('aria-pressed',String(gender==='f')); $('gM').setAttribute('aria-pressed',String(gender==='m'));
+  if(synth&&voices.length){
+    const want=gender==='m'?isM:isF;
+    $('voiceUsed').textContent=['es','en'].map(l=>{const v=voiceFor(l); const nm=l==='es'?'Español':'English';
+      return v? nm+': '+v.name+((gender==='m'?isF(v):isM(v))?' ('+T(gender==='m'?'missM':'missF')+')':'') : nm+': —'}).join('  ·  ');
+  } else $('voiceUsed').textContent='';
   $('repSel').options[0].textContent=T('repsOff');
-  const va=$('voiceEs').options[0], vb=$('voiceEn').options[0]; if(va)va.textContent=T('autoVoice'); if(vb)vb.textContent=T('autoVoice');
-  $('prevCue').setAttribute('aria-label',T('prevLine'));
   let note='';
-  if(!synth){note=inApp?T('inApp'):T('noSynth');ab.disabled=rb.disabled=true}
-  else if(inApp){note=T('inApp')}
+  if(!synth){note=T('noSynth');ab.disabled=rb.disabled=true}
   else if(voices.length){
     const need=mode==='both'?['es','en']:[mode];
     const miss=need.filter(l=>!voiceFor(l));
@@ -834,43 +813,53 @@ function updateVoiceUI(){
   }
   $('voiceNote').textContent=note||T('voiceHint');
 }
-$('readBtn').onclick=()=>{ if(autoOn)stopAuto(); speakCurrent() };
+$('readBtn').onclick=()=>{unlockSpeech();speakCurrent()};
 $('autoBtn').onclick=()=>autoOn?stopAuto():startAuto();
-
-/* Audio test: speaks one Spanish line inside the tap and reports what the device did */
-async function audioTest(){
-  if(autoOn)stopAuto(); speakToken++;
-  if(synth&&(synth.speaking||synth.pending)){try{synth.cancel()}catch(e){}}
-  const es=voices.filter(v=>langOf(v).startsWith('es')).length, en=voices.filter(v=>langOf(v).startsWith('en')).length;
-  const v=voiceFor('es');
-  showHelp(true,'…'); setStatus(T('speaking'));
-  const r=await say(T('testLine'),'es');
-  setStatus('');
-  const lines=[
-    'Text-to-speech: '+(synth?'yes':'NO'),
-    'Voices: '+voices.length+' (ES '+es+', EN '+en+')',
-    'Spanish voice: '+(v?v.name+' · '+v.lang:'none'),
-    'Speech started: '+(r.started?'yes':'NO')+(r.error?' · error: '+r.error:''),
-    'In-app browser: '+(inApp?'YES':'no'),
-    navigator.userAgent
-  ];
-  showHelp(true, lines.join('\n'));
-}
-$('testBtn').onclick=()=>audioTest();
 $('skipBtn').onclick=()=>{if(skipWait)skipWait()};
 $('rateSel').value=String(rate); $('gapSel').value=String(gap); $('repSel').value=String(repSec);
 $('rateSel').onchange=e=>{rate=parseFloat(e.target.value);store.set('rate',rate)};
 $('gapSel').onchange=e=>{gap=parseFloat(e.target.value);store.set('gap',gap)};
 $('repSel').onchange=e=>{repSec=parseFloat(e.target.value);store.set('repSec',repSec)};
-$('voiceEs').onchange=e=>{store.set('voice_es',e.target.value);updateVoiceUI()};
-$('voiceEn').onchange=e=>{store.set('voice_en',e.target.value);updateVoiceUI()};
+function pickGender(g){
+  gender=g; store.set('gender',g); updateVoiceUI();
+  if(autoOn)stopAuto();
+  unlockSpeech(); speakToken++; if(synth){try{synth.cancel()}catch(e){}}
+  const lg=mode==='en'?'en':'es'; say(UI[lg].sample,lg);          // play a sample right away, inside the tap
+}
+$('gF').onclick=()=>pickGender('f');
+$('gM').onclick=()=>pickGender('m');
 document.addEventListener('keydown',e=>{
   if(e.target.tagName==='SELECT'||e.ctrlKey||e.metaKey)return;
   if(e.key==='p'||e.key==='P'){e.preventDefault();autoOn?stopAuto():startAuto()}
 });
-document.addEventListener('visibilitychange',()=>{
-  if(document.hidden){ if(autoOn){stopAuto();pausedByHide=true} }
-  else if(pausedByHide){ pausedByHide=false; setStatus(T('pausedHidden')) }
-});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&autoOn)keepAwake(true)});
+
+
+/* ---- additions kept from the mobile update (do not change how speech is played) ---- */
+function showHelp(on,msg){ const h=$('voiceHelp'); if(!h)return; h.hidden=!on; if(on)h.textContent=msg||''; }
+$('prevCue').setAttribute('aria-label',T('prevLine'));
+/* Audio test: same speaking method as the class, then reports what the phone did */
+$('testBtn').onclick=()=>{
+  if(autoOn)stopAuto();
+  unlockSpeech();
+  const lg=langOf, es=voices.filter(v=>lg(v).startsWith('es')).length, en=voices.filter(v=>lg(v).startsWith('en')).length;
+  const v=voiceFor('es'); let started=false, err='';
+  showHelp(true,'…');
+  if(synth){
+    const u=new SpeechSynthesisUtterance(T('testLine'));
+    u.lang='es-ES'; if(v){try{u.voice=v;u.lang=v.lang}catch(e){}} u.rate=rate;
+    u.onstart=()=>{started=true}; u.onerror=e=>{err=(e&&e.error)||'error'};
+    window.__testUtt=u; synth.speak(u);
+  }
+  setTimeout(()=>{
+    showHelp(true,[
+      'Text-to-speech: '+(synth?'yes':'NO'),
+      'Voices: '+voices.length+' (ES '+es+', EN '+en+')',
+      'Spanish voice: '+(v?v.name+' · '+v.lang:'none'),
+      'Speech started: '+(started||(synth&&synth.speaking)?'yes':'not detected')+(err?' · error: '+err:''),
+      navigator.userAgent
+    ].join('\n'));
+  },3000);
+};
 
 applyUI();
