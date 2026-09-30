@@ -22,7 +22,7 @@ const UI = {
     side:"tumbada de lado — pierna de arriba en la barra", bar:"barra", springs:"muelles",
     readLine:"🔊 Leer frase", autoOn:"▶ Manos libres", autoOff:"■ Detener", speed:"Velocidad", gap:"Pausa entre frases",
     voiceHint:"Manos libres lee cada frase en voz alta, espera mientras haces las repeticiones y pasa sola a la siguiente, etapa tras etapa. Tecla P: iniciar o detener.",
-    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceEsLbl:"Voz en español", voiceEnLbl:"Voz en inglés", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!",
+    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceEsLbl:"Voz en español", voiceEnLbl:"Voz en inglés", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!", testBtn:"Probar audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No se oye el audio.", audioHelp:"¿Sin sonido? Sube el volumen, quita el modo silencio (iPhone) y comprueba que hay una voz en español instalada en los ajustes de texto a voz del móvil. Después toca Manos libres otra vez.",
     pausedHidden:"Pausado: la pantalla se apagó o cambiaste de app. Toca Manos libres para continuar.",
     inApp:"Para escuchar el audio, abre esta página en Safari o Chrome (menú ••• → Abrir en el navegador).",
@@ -46,7 +46,7 @@ const UI = {
     side:"lying on the side — top leg on the footbar", bar:"footbar", springs:"springs",
     readLine:"🔊 Read line", autoOn:"▶ Hands-free", autoOff:"■ Stop", speed:"Speed", gap:"Pause between lines",
     voiceHint:"Hands-free reads each line aloud, waits while you do the reps, then moves on by itself, stage after stage. Key P: start or stop.",
-    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceEsLbl:"Spanish voice", voiceEnLbl:"English voice", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!",
+    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceEsLbl:"Spanish voice", voiceEnLbl:"English voice", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!", testBtn:"Test audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No audio is playing.", audioHelp:"No sound? Turn up the volume, switch off silent mode (iPhone), and check a Spanish voice is installed in your phone's text-to-speech settings. Then tap Hands-free again.",
     pausedHidden:"Paused: the screen turned off or you switched apps. Tap Hands-free to continue.",
     inApp:"To hear the audio, open this page in Safari or Chrome (menu ••• → Open in browser).",
@@ -703,7 +703,7 @@ const langOf=v=>(v.lang||'').replace('_','-').toLowerCase();
 function voiceFor(lang){
   const saved=store.get('voice_'+lang,''); if(saved){const v=voices.find(v=>v.voiceURI===saved);if(v)return v}
   const pref=lang==='es'?['es-es','es-mx','es-us','es']:['en-gb','en-us','en'];
-  for(const p of pref){const list=voices.filter(v=>langOf(v).startsWith(p)); if(list.length) return list.find(v=>v.localService)||list[0]}
+  for(const p of pref){const v=voices.find(v=>langOf(v).startsWith(p)); if(v)return v}
   return null;
 }
 function fillVoices(){
@@ -714,19 +714,30 @@ function fillVoices(){
     const saved=store.get('voice_'+lang,''); sel.value=saved; if(sel.value!==saved)sel.value='';
   });
 }
-/* Speak one text. Resolves {started:boolean}. speak() is called synchronously. */
+/* Speak one text. Resolves {started, error}. speak() is called synchronously.
+   Phones don't always fire onstart/onend, so ANY sign of life counts as "started":
+   onstart, onend, or synth.speaking seen true while polling. We never cancel speech
+   just because an event is missing. */
+let lastErr='';
+window.__utts=[];                                   // keep utterances referenced (avoids a Chrome/Safari GC bug)
 function say(text,lang){return new Promise(res=>{
-  if(!synth){res({started:false});return}
+  if(!synth){res({started:false,error:'no-synth'});return}
   const u=new SpeechSynthesisUtterance(text.replace(/\.\.\.$/,'…'));
-  const v=voiceFor(lang); u.lang=v?v.lang:(lang==='es'?'es-ES':'en-GB'); if(v)u.voice=v; u.rate=rate;
-  let started=false, fin=false, endTimer=null;
-  const end=()=>{if(fin)return; fin=true; clearTimeout(endTimer); clearTimeout(startTimer); res({started})};
-  u.onstart=()=>{started=true; clearTimeout(startTimer);
-    endTimer=setTimeout(end,2500+text.length*140/rate)};   // safety net if onend never fires (some Android phones)
-  u.onend=end;
-  u.onerror=e=>{ if(e&&e.error==='interrupted'||e&&e.error==='canceled'){started=true} end() };
-  const startTimer=setTimeout(()=>{ if(!started){ try{synth.cancel()}catch(e){} end() } },4000);
-  try{ if(synth.paused)synth.resume(); synth.speak(u) }catch(e){ end() }
+  const v=voiceFor(lang);
+  u.lang=(v&&v.lang?v.lang:(lang==='es'?'es-ES':'en-GB')).replace('_','-');
+  if(v)u.voice=v; u.rate=rate; u.volume=1;
+  window.__utts.push(u); if(window.__utts.length>6)window.__utts.shift();
+  let started=false, fin=false, err='';
+  const poll=setInterval(()=>{ if(synth.speaking)started=true },200);
+  const end=()=>{ if(fin)return; fin=true; clearInterval(poll); clearTimeout(noStart); clearTimeout(maxT); res({started,error:err}) };
+  u.onstart=()=>{started=true};
+  u.onend=()=>{started=true; end()};
+  u.onerror=e=>{ err=(e&&e.error)||'error'; lastErr=err; if(err==='interrupted'||err==='canceled')started=true; end() };
+  // no sign of life at all after 5 s -> report as not started (but don't cancel anything)
+  const noStart=setTimeout(()=>{ if(!started&&!synth.speaking&&!synth.pending)end() },5000);
+  // safety net if onend never fires
+  const maxT=setTimeout(end,6000+text.length*160/rate);
+  try{ if(synth.paused)synth.resume(); synth.speak(u) }catch(e){ err=String(e); end() }
 })}
 async function sayLine(l,token){
   if(mode==='both'){
@@ -755,10 +766,12 @@ function clearCounting(){document.querySelectorAll('.reps.counting').forEach(r=>
 /* Must stay free of `await` before the first say(): that keeps speech inside the tap on iOS. */
 async function speakCurrent(){
   const token=++speakToken; if(skipWait)skipWait();
-  if(synth&&(synth.speaking||synth.pending)){try{synth.cancel()}catch(e){}}
+  const busy=synth&&(synth.speaking||synth.pending);
+  if(busy){try{synth.cancel()}catch(e){}}
   clearCounting();
   const l=STAGES[cur].lines.filter(x=>x.k==='c')[cue]; if(!l)return;
   markSpeaking(true); setStatus(T('speaking')); showHelp(false);
+  if(busy){ await new Promise(r=>setTimeout(r,120)); if(token!==speakToken)return }   // engines drop speech right after cancel()
   const r=await sayLine(l,token);
   if(token!==speakToken)return;
   markSpeaking(false);
@@ -805,7 +818,7 @@ function stopAuto(){
 function updateVoiceUI(){
   const ab=$('autoBtn'), rb=$('readBtn'); if(!ab)return;
   ab.textContent=autoOn?T('autoOff'):T('autoOn'); ab.classList.toggle('primary',autoOn); ab.setAttribute('aria-pressed',String(autoOn));
-  rb.textContent=T('readLine'); $('skipBtn').textContent=T('skip');
+  rb.textContent=T('readLine'); $('testBtn').textContent=T('testBtn'); $('skipBtn').textContent=T('skip');
   $('speedLbl').textContent=T('speed'); $('gapLbl').textContent=T('gap'); $('repsLbl').textContent=T('repsLbl'); $('setLbl').textContent=T('setLbl');
   $('voiceEsLbl').textContent=T('voiceEsLbl'); $('voiceEnLbl').textContent=T('voiceEnLbl');
   $('repSel').options[0].textContent=T('repsOff');
@@ -823,6 +836,27 @@ function updateVoiceUI(){
 }
 $('readBtn').onclick=()=>{ if(autoOn)stopAuto(); speakCurrent() };
 $('autoBtn').onclick=()=>autoOn?stopAuto():startAuto();
+
+/* Audio test: speaks one Spanish line inside the tap and reports what the device did */
+async function audioTest(){
+  if(autoOn)stopAuto(); speakToken++;
+  if(synth&&(synth.speaking||synth.pending)){try{synth.cancel()}catch(e){}}
+  const es=voices.filter(v=>langOf(v).startsWith('es')).length, en=voices.filter(v=>langOf(v).startsWith('en')).length;
+  const v=voiceFor('es');
+  showHelp(true,'…'); setStatus(T('speaking'));
+  const r=await say(T('testLine'),'es');
+  setStatus('');
+  const lines=[
+    'Text-to-speech: '+(synth?'yes':'NO'),
+    'Voices: '+voices.length+' (ES '+es+', EN '+en+')',
+    'Spanish voice: '+(v?v.name+' · '+v.lang:'none'),
+    'Speech started: '+(r.started?'yes':'NO')+(r.error?' · error: '+r.error:''),
+    'In-app browser: '+(inApp?'YES':'no'),
+    navigator.userAgent
+  ];
+  showHelp(true, lines.join('\n'));
+}
+$('testBtn').onclick=()=>audioTest();
 $('skipBtn').onclick=()=>{if(skipWait)skipWait()};
 $('rateSel').value=String(rate); $('gapSel').value=String(gap); $('repSel').value=String(repSec);
 $('rateSel').onchange=e=>{rate=parseFloat(e.target.value);store.set('rate',rate)};
