@@ -22,7 +22,7 @@ const UI = {
     side:"tumbada de lado — pierna de arriba en la barra", bar:"barra", springs:"muelles",
     readLine:"🔊 Leer frase", autoOn:"▶ Manos libres", autoOff:"■ Detener", speed:"Velocidad", gap:"Pausa entre frases",
     voiceHint:"Manos libres lee cada frase en voz alta, espera mientras haces las repeticiones y pasa sola a la siguiente, etapa tras etapa. Tecla P: iniciar o detener.",
-    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceLbl:"Voz", female:"Mujer", male:"Hombre", missF:"no hay voz de mujer", missM:"no hay voz de hombre", sample:"Hola, esta es tu voz para la clase.", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!", testBtn:"Probar audio", testLine:"Hola, esto es una prueba de audio.",
+    repsLbl:"Tiempo por repetición", setLbl:"Ajustes de audio", repsOff:"no esperar", voiceLbl:"Voz", female:"Mujer", male:"Hombre", missF:"no hay voz de mujer", missM:"no hay voz de hombre", sample:"Hola, esta es tu voz para la clase.", autoVoice:"Automática", speaking:"Leyendo…", nextIn:"Siguiente frase en {s} s", repsLeft:"Haz las repeticiones: quedan {s} s", skip:"Saltar", classDone:"Clase terminada. ¡Bien hecho!", focusLbl:"Enfoque:", bodyTitle:"Mapa corporal y correcciones", bankHint:"Toca una zona del cuerpo o una etiqueta para ver frases de corrección. Toca una frase para escucharla.", front:"Delante", back:"Detrás", cuesFor:"Correcciones:", testBtn:"Probar audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No se oye el audio.", audioHelp:"¿Sin sonido? Sube el volumen, quita el modo silencio (iPhone) y comprueba que hay una voz en español instalada en los ajustes de texto a voz del móvil. Después toca Manos libres otra vez.",
     pausedHidden:"Pausado: la pantalla se apagó o cambiaste de app. Toca Manos libres para continuar.",
     inApp:"Para escuchar el audio, abre esta página en Safari o Chrome (menú ••• → Abrir en el navegador).",
@@ -46,7 +46,7 @@ const UI = {
     side:"lying on the side — top leg on the footbar", bar:"footbar", springs:"springs",
     readLine:"🔊 Read line", autoOn:"▶ Hands-free", autoOff:"■ Stop", speed:"Speed", gap:"Pause between lines",
     voiceHint:"Hands-free reads each line aloud, waits while you do the reps, then moves on by itself, stage after stage. Key P: start or stop.",
-    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceLbl:"Voice", female:"Female", male:"Male", missF:"no female voice", missM:"no male voice", sample:"Hi, this is your class voice.", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!", testBtn:"Test audio", testLine:"Hola, esto es una prueba de audio.",
+    repsLbl:"Time per rep", setLbl:"Audio settings", repsOff:"don't wait", voiceLbl:"Voice", female:"Female", male:"Male", missF:"no female voice", missM:"no male voice", sample:"Hi, this is your class voice.", autoVoice:"Automatic", speaking:"Speaking…", nextIn:"Next line in {s} s", repsLeft:"Do the reps: {s} s left", skip:"Skip", classDone:"Class complete. Well done!", focusLbl:"Focus:", bodyTitle:"Body map & correction cues", bankHint:"Tap a body area or a tag to see correction cues. Tap a cue to hear it.", front:"Front", back:"Back", cuesFor:"Cues:", testBtn:"Test audio", testLine:"Hola, esto es una prueba de audio.",
     blocked:"No audio is playing.", audioHelp:"No sound? Turn up the volume, switch off silent mode (iPhone), and check a Spanish voice is installed in your phone's text-to-speech settings. Then tap Hands-free again.",
     pausedHidden:"Paused: the screen turned off or you switched apps. Tap Hands-free to continue.",
     inApp:"To hear the audio, open this page in Safari or Chrome (menu ••• → Open in browser).",
@@ -597,6 +597,7 @@ function renderRail(){
 let cueEls=[];
 function renderStage(){
   const st=STAGES[cur];
+  if(typeof renderFocus==='function')renderFocus();
   $('sNum').textContent=cur+1;
   $('sTitle').textContent=mode==='en'?st.t.en:st.t.es;
   $('sEn').textContent=mode==='both'?`${st.t.en} — ${st.sub.en}`:pick(st.sub);
@@ -861,5 +862,181 @@ $('testBtn').onclick=()=>{
     ].join('\n'));
   },3000);
 };
+
+
+/* ---------- Focus tags, body map and correction-cue bank ---------- */
+const AREAS={
+  core:{es:"Centro (abdomen)",en:"Core"},
+  pelvicFloor:{es:"Suelo pélvico",en:"Pelvic floor"},
+  pelvis:{es:"Pelvis",en:"Pelvis"},
+  ribs:{es:"Costillas",en:"Ribs"},
+  breath:{es:"Respiración",en:"Breath"},
+  spine:{es:"Columna",en:"Spine"},
+  shoulders:{es:"Hombros y escápulas",en:"Shoulders"},
+  neck:{es:"Cuello",en:"Neck"},
+  glutes:{es:"Glúteos y caderas",en:"Glutes & hips"},
+  innerThighs:{es:"Aductores",en:"Inner thighs"},
+  knees:{es:"Rodillas",en:"Knees"},
+  feet:{es:"Pies y tobillos",en:"Feet & ankles"}
+};
+/* what to watch in each stage, most important first */
+const FOCUS=[
+  ["breath","ribs","core","neck","shoulders"],                 // 1 Bienvenida
+  ["pelvis","knees","core","innerThighs","feet","shoulders"],  // 2 Footwork
+  ["feet","pelvis","knees"],                                   // 3 Running
+  ["spine","glutes","pelvis","core","knees","neck"],           // 4 Pelvic curl
+  ["core","ribs","neck","breath"],                             // 5 Abdominal prep
+  ["core","breath","shoulders","neck"],                        // 6 Hundred
+  ["core","pelvis","spine","breath"],                          // 7 Coordinación
+  ["pelvis","glutes","core","knees"],                          // 8 Side lying
+  ["core","shoulders","pelvis","spine","glutes"],              // 9 Long stretch
+  ["core","shoulders","neck","spine"],                         // 10 Elephant
+  ["ribs","spine","shoulders","breath"],                       // 11 Mermaid
+  ["spine","neck","breath"]                                    // 12 Vuelta a la calma
+];
+/* extra correction cues: "Español || English" */
+const CUES={
+  core:`Lleva el ombligo suavemente hacia la columna. || Gently draw your navel toward your spine.
+Imagina que cierras una cremallera desde el pubis hasta el ombligo. || Imagine zipping up from your pubic bone to your navel.
+Activa el abdomen sin contener la respiración. || Engage your abs without holding your breath.
+Mantén el abdomen plano, sin que se abombe. || Keep your abdomen flat, don't let it dome.
+El movimiento empieza en tu centro. || The movement starts from your center.`,
+  pelvicFloor:`Activa suavemente el suelo pélvico, como un ascensor que sube. || Gently lift your pelvic floor, like an elevator going up.
+Conecta el suelo pélvico al exhalar. || Connect your pelvic floor as you exhale.
+Suelta el suelo pélvico al inhalar. || Release your pelvic floor as you inhale.
+Es una activación suave, no un apretón. || It's a gentle lift, not a squeeze.`,
+  pelvis:`Mantén la pelvis neutra: las crestas de la cadera y el pubis al mismo nivel. || Keep your pelvis neutral: hip bones and pubic bone level.
+Imagina un vaso de agua sobre tu pelvis que no se puede derramar. || Imagine a glass of water on your pelvis that mustn't spill.
+Las dos caderas a la misma altura. || Keep both hips level.
+No dejes que la pelvis se balancee. || Don't let your pelvis rock.
+Si la zona lumbar se arquea, sube un poco las piernas. || If your lower back arches, lift your legs a little higher.`,
+  ribs:`Cierra las costillas hacia la pelvis. || Close your ribs down toward your pelvis.
+No dejes que las costillas se abran hacia delante. || Don't let your ribs flare forward.
+Respira hacia los lados y hacia la espalda. || Breathe into the sides and back of your ribs.
+Siente las costillas pesadas sobre la colchoneta. || Feel your ribs heavy on the mat.`,
+  breath:`Inhala por la nariz, exhala por la boca. || Inhale through your nose, exhale through your mouth.
+Exhala en el esfuerzo. || Exhale on the effort.
+No contengas la respiración. || Don't hold your breath.
+Deja que la respiración marque el ritmo del movimiento. || Let your breath set the rhythm of the movement.
+Exhala del todo, como si soplaras una vela despacio. || Exhale fully, like slowly blowing out a candle.`,
+  spine:`Alarga la columna desde la coronilla hasta el coxis. || Lengthen your spine from the crown of your head to your tailbone.
+Mueve la columna vértebra por vértebra. || Move your spine one vertebra at a time.
+Imagina que tu columna es un collar de perlas. || Imagine your spine is a string of pearls.
+Crece hacia arriba antes de moverte. || Grow taller before you move.`,
+  shoulders:`Lleva los hombros lejos de las orejas. || Draw your shoulders away from your ears.
+Desliza las escápulas hacia abajo por la espalda. || Slide your shoulder blades down your back.
+Abre las clavículas. || Widen across your collarbones.
+Empuja la barra sin hundirte entre los hombros. || Press the bar away without sinking between your shoulders.
+Brazos fuertes, hombros relajados. || Strong arms, relaxed shoulders.`,
+  neck:`Alarga la nuca. || Lengthen the back of your neck.
+Deja espacio entre la barbilla y el pecho, como si sostuvieras una mandarina. || Leave space between chin and chest, as if holding a tangerine.
+Relaja la mandíbula. || Relax your jaw.
+Si sientes el cuello, baja la cabeza y descansa. || If you feel it in your neck, lower your head and rest.
+La mirada sigue la línea de la columna. || Let your gaze follow the line of your spine.`,
+  glutes:`Activa suavemente los glúteos. || Gently engage your glutes.
+Empuja desde los talones para sentir los glúteos. || Press through your heels to feel your glutes.
+Glúteos activos, pero sin apretar de más. || Glutes on, but don't over-squeeze.
+Coloca la cadera de arriba justo encima de la de abajo. || Stack your top hip right over your bottom hip.`,
+  innerThighs:`Aprieta suavemente la parte interna de los muslos. || Gently squeeze your inner thighs.
+Imagina que sostienes una pelota pequeña entre las rodillas. || Imagine holding a small ball between your knees.
+Junta las piernas desde la parte alta de los muslos. || Draw your legs together from the top of your thighs.
+Talones juntos y conecta hasta los aductores. || Heels together, and feel it all the way up your inner thighs.`,
+  knees:`No bloquees las rodillas. || Don't lock your knees.
+Las rodillas siguen la dirección de los dedos de los pies. || Your knees follow the direction of your toes.
+Mantén las rodillas en línea con las caderas. || Keep your knees in line with your hips.
+Estira las piernas con una ligera flexión. || Straighten your legs with a soft bend.`,
+  feet:`Reparte el peso por todo el pie. || Spread the weight across your whole foot.
+Talones estables, sin que caigan hacia dentro ni hacia fuera. || Keep your heels steady, not rolling in or out.
+Activa el arco del pie. || Lift through the arch of your foot.
+Mueve el tobillo con control, sin rebotar. || Move your ankles with control, no bouncing.
+Dedos relajados, no los agarres. || Relax your toes, don't grip.`
+};
+Object.keys(CUES).forEach(k=>{CUES[k]=CUES[k].split('\n').map(l=>{const [es,en]=l.split(' || ');return{es:es.trim(),en:(en||es).trim()}})});
+
+const areaName=a=>mode==='both'?`${AREAS[a].es} / ${AREAS[a].en}`:AREAS[a][mode];
+let selArea=null, selStage=-1;
+
+/* simple front + back body drawing; each shaded part lists the areas it shows */
+const BODY_SVG=(()=>{
+  const fig=(dx,back)=>{
+    const g=[];
+    const base=(s)=>g.push(s.replace('<','<').replace(/^<(\w+)/,`<$1 class="base"`));
+    // neutral silhouette
+    base(`<rect x="${dx+24}" y="58" width="14" height="82" rx="7"/>`);
+    base(`<rect x="${dx+102}" y="58" width="14" height="82" rx="7"/>`);
+    base(`<rect x="${dx+40}" y="52" width="60" height="98" rx="18"/>`);
+    base(`<rect x="${dx+46}" y="146" width="22" height="74" rx="10"/>`);
+    base(`<rect x="${dx+72}" y="146" width="22" height="74" rx="10"/>`);
+    base(`<rect x="${dx+48}" y="226" width="18" height="54" rx="8"/>`);
+    base(`<rect x="${dx+74}" y="226" width="18" height="54" rx="8"/>`);
+    const ar=(areas,shape)=>g.push(shape.replace(/^<(\w+)/,`<$1 class="ar" data-a="${areas}"`));
+    ar('neck',`<circle cx="${dx+70}" cy="24" r="16"/>`);
+    ar('neck',`<rect x="${dx+63}" y="38" width="14" height="14" rx="4"/>`);
+    if(!back){
+      ar('shoulders',`<ellipse cx="${dx+44}" cy="60" rx="12" ry="8"/>`);
+      ar('shoulders',`<ellipse cx="${dx+96}" cy="60" rx="12" ry="8"/>`);
+      ar('ribs breath',`<rect x="${dx+47}" y="64" width="46" height="34" rx="14"/>`);
+      ar('core',`<rect x="${dx+50}" y="100" width="40" height="27" rx="10"/>`);
+      ar('pelvis',`<rect x="${dx+44}" y="129" width="52" height="19" rx="9"/>`);
+      ar('pelvicFloor',`<ellipse cx="${dx+70}" cy="151" rx="9" ry="5"/>`);
+      ar('innerThighs',`<rect x="${dx+60}" y="158" width="8" height="52" rx="4"/>`);
+      ar('innerThighs',`<rect x="${dx+72}" y="158" width="8" height="52" rx="4"/>`);
+      ar('knees',`<circle cx="${dx+57}" cy="222" r="9"/>`);
+      ar('knees',`<circle cx="${dx+83}" cy="222" r="9"/>`);
+    } else {
+      ar('ribs breath',`<rect x="${dx+46}" y="62" width="48" height="38" rx="14"/>`);
+      ar('shoulders',`<ellipse cx="${dx+55}" cy="76" rx="10" ry="15"/>`);
+      ar('shoulders',`<ellipse cx="${dx+85}" cy="76" rx="10" ry="15"/>`);
+      for(let y=54;y<=132;y+=9) ar('spine',`<circle cx="${dx+70}" cy="${y}" r="3.6"/>`);
+      ar('glutes',`<ellipse cx="${dx+57}" cy="140" rx="13" ry="12"/>`);
+      ar('glutes',`<ellipse cx="${dx+83}" cy="140" rx="13" ry="12"/>`);
+    }
+    ar('feet',`<ellipse cx="${dx+56}" cy="286" rx="12" ry="6"/>`);
+    ar('feet',`<ellipse cx="${dx+84}" cy="286" rx="12" ry="6"/>`);
+    return g.join('');
+  };
+  return fig(5,false)+fig(155,true)+`<text x="75" y="308" id="bmFront"></text><text x="225" y="308" id="bmBack"></text>`;
+})();
+
+function renderFocus(){
+  const f=FOCUS[cur]||[];
+  if(selStage!==cur||!selArea){selArea=f[0]||'core';selStage=cur}
+  // tags under the stage title
+  $('focusTags').innerHTML=`<span class="flbl">${T('focusLbl')}</span>`+f.map(a=>`<button class="ftag" type="button" data-a="${a}">${areaName(a)}</button>`).join('');
+  $('focusTags').querySelectorAll('.ftag').forEach(b=>b.onclick=()=>{selectArea(b.dataset.a);$('bodyPanel').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'})});
+  // body map
+  const map=$('bodyMap'); if(!map.dataset.ready){map.innerHTML=BODY_SVG;map.dataset.ready='1';
+    map.querySelectorAll('.ar').forEach(el=>el.addEventListener('click',()=>{
+      const list=el.dataset.a.split(' '); selectArea(list.find(a=>FOCUS[cur].includes(a)&&a!==selArea)||list[0]);
+    }));}
+  $('bmFront').textContent=T('front'); $('bmBack').textContent=T('back');
+  map.setAttribute('aria-label',T('bodyTitle'));
+  $('bodyTitle').textContent=T('bodyTitle'); $('bankHint').textContent=T('bankHint');
+  // all area chips, this stage's focus first
+  const order=[...f,...Object.keys(AREAS).filter(a=>!f.includes(a))];
+  $('areaChips').innerHTML=order.map(a=>`<button type="button" class="achip${f.includes(a)?' infocus':''}" data-a="${a}" aria-pressed="false">${areaName(a)}</button>`).join('');
+  $('areaChips').querySelectorAll('.achip').forEach(b=>b.onclick=()=>selectArea(b.dataset.a));
+  paintFocus();
+}
+function selectArea(a){selArea=a;paintFocus()}
+function paintFocus(){
+  const f=FOCUS[cur]||[];
+  $('bodyMap').querySelectorAll('.ar').forEach(el=>{
+    const list=el.dataset.a.split(' ');
+    el.classList.toggle('on',list.some(a=>f.includes(a)));
+    el.classList.toggle('sel',list.includes(selArea));
+  });
+  $('areaChips').querySelectorAll('.achip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.a===selArea)));
+  $('bankTitle').textContent=`${T('cuesFor')} ${areaName(selArea)}`;
+  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  $('bankList').innerHTML=CUES[selArea].map((c,i)=>`<li><button type="button" data-i="${i}">${
+    mode==='both'?`“${esc(c.es)}”<span class="tr">${esc(c.en)}</span>`:`“${esc(c[mode])}”`}</button></li>`).join('');
+  $('bankList').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    if(autoOn)return;                                   // don't talk over the hands-free class
+    const c=CUES[selArea][+b.dataset.i]; const lg=mode==='en'?'en':'es';
+    try{unlockSpeech()}catch(e){} speakToken++; if(synth){try{synth.cancel()}catch(e){}}
+    say(c[lg],lg);
+  });
+}
 
 applyUI();

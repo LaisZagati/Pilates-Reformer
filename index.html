@@ -4,13 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pilates Reformer — Class Coach</title>
-<!-- Pilates Reformer — Home Screen / App Mode -->
-<meta name="theme-color" content="#FFF8EC">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Pilates Reformer">
-<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -48,6 +41,7 @@
       <div>
         <h2 id="sTitle"></h2>
         <div class="en" id="sEn"></div>
+        <div class="focus" id="focusTags"></div>
       </div>
       <div class="stagetimer">
         <div class="t" id="sClock">00:00</div>
@@ -56,6 +50,7 @@
     </div>
 
     <div class="grid2">
+      <div class="leftcol">
       <section class="panel demo" aria-label="Demo">
         <div class="demo-title"><span id="demoName"></span>
           <select id="demoPick" aria-label="Demo"></select>
@@ -70,6 +65,19 @@
         </div>
         <div class="how" id="how"></div>
       </section>
+      <section class="panel bodyp" id="bodyPanel" aria-label="Body focus">
+        <h3 id="bodyTitle"></h3>
+        <div class="bodygrid">
+          <div class="mapwrap"><svg id="bodyMap" viewBox="0 0 300 312" role="img"></svg></div>
+          <div class="bank">
+            <div class="areachips" id="areaChips"></div>
+            <h4 id="bankTitle"></h4>
+            <ul class="banklist" id="bankList"></ul>
+          </div>
+        </div>
+        <p class="hint" id="bankHint"></p>
+      </section>
+      </div>
 
       <section class="panel" aria-label="Script">
         <div class="voicetop">
