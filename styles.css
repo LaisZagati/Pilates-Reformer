@@ -226,3 +226,10 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 /* body panel: map on top, then area chips and cues */
 .bodygrid{grid-template-columns:1fr}
 .mapwrap{max-width:17rem;margin:0 auto .4rem;width:100%}
+/* phones: stage timer drops under the title so the focus tags have room */
+@media (max-width:520px){
+  .stagehead{flex-wrap:wrap}
+  .stagehead > div:nth-child(2){flex-basis:calc(100% - 3.5rem)}
+  .stagehead .stagetimer{width:100%;text-align:left;display:flex;gap:.6rem;align-items:baseline}
+  .lvl button{padding:.35rem .5rem}
+}
