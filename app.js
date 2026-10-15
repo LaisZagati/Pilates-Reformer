@@ -436,64 +436,100 @@ Nos vemos en la próxima clase. || See you in the next class.`}
 ];
 
 const INTERMEDIATE_STAGES = [
-{t:{es:"Bienvenida y centrado",en:"Welcome & centering"}, sub:{es:"Colocación, respiración y conexión del centro",en:"Set-up, breathing and core connection"}, min:3, demos:["breath"],
+{t:{es:"Bienvenida y centrado",en:"Welcome & centering"}, sub:{es:"Colocación, pelvis neutra y respiración",en:"Set-up, neutral pelvis and breathing"}, min:3, demos:["breath"],
 yt:"reformer pilates intermediate warm up breathing",
 how:{en:["Same supine set-up as the beginner class, but settle the room quickly: intermediate classes keep a steadier flow.","Check neutral pelvis and the rib-to-pelvis connection before you start; everything later builds on it.","Tell the class which accessories you'll use today (straps, short box, long box) so they're ready to hand."],
 es:["Misma colocación boca arriba que en principiantes, pero sin entretenerse: el ritmo intermedio es más continuo.","Comprueba la pelvis neutra y la conexión costillas-pelvis antes de empezar; todo lo demás se apoya en eso.","Anuncia los accesorios del día (correas, cajón corto, cajón largo) para tenerlos a mano."]},
 s:`## Preparación || Set-up
-Bienvenidos a la clase. || Welcome to class.
-Hoy subimos un nivel: más ritmo, más control y trabajo con las correas y el cajón. || Today we step up a level: more flow, more control, and work with the straps and the box.
-Túmbate boca arriba sobre el carro, con la cabeza en el reposacabezas. || Lie on your back on the carriage, head on the headrest.
-Talones sobre la barra, separados al ancho de las caderas. || Heels on the bar, hip-width apart.
-Brazos largos a los lados, palmas hacia abajo. || Arms long by your sides, palms down.
-Busca la pelvis neutra: ni arqueada ni aplastada contra el carro. || Find a neutral pelvis: not arched, not flattened into the carriage.
+Bienvenidos a la clase de nivel intermedio. || Welcome to the intermediate class.
+Hoy vamos a trabajar con más ritmo y más control, y usaremos las correas y el cajón. || Today we'll work with more flow and more control, and we'll use the straps and the box.
+Antes de empezar, comprueba que tienes el cajón cerca de tu máquina. || Before we start, check that the box is close to your machine.
+Ajusta los muelles a una resistencia pesada para el footwork. || Set the springs to a heavy resistance for footwork.
+Siéntate en el centro del carro y túmbate boca arriba, despacio. || Sit in the middle of the carriage and slowly lie down on your back.
+La cabeza en el reposacabezas y los hombros tocando los apoyos de hombros. || Head on the headrest and shoulders touching the shoulder rests.
+Coloca los talones sobre la barra, separados al ancho de las caderas. || Place your heels on the bar, hip-width apart.
+Las rodillas apuntan al techo y las piernas están paralelas. || Your knees point to the ceiling and your legs are parallel.
+Brazos largos a los lados, con las palmas hacia abajo. || Arms long by your sides, palms down.
+## Pelvis neutra || Neutral pelvis
+Ahora vamos a buscar la pelvis neutra. || Now let's find a neutral pelvis.
+Imagina que los huesos de la cadera y el pubis forman un triángulo plano. || Imagine your hip bones and pubic bone form a flat triangle.
+Ese triángulo está paralelo al techo. || That triangle is parallel to the ceiling.
+Debajo de la zona lumbar hay un pequeño espacio natural. || There is a small natural space under your low back.
+No lo aplastes contra el carro y no lo arquees. || Don't press it into the carriage and don't arch it.
 ## Respiración || Breathing
-Inhala por la nariz y abre las costillas hacia los lados. || Inhale through your nose and widen your ribs to the sides.
-Exhala por la boca y cierra las costillas hacia la pelvis. || Exhale through your mouth and close your ribs toward your pelvis.
-Al exhalar, activa el centro: el ombligo suave hacia la columna. || As you exhale, engage your center: navel gently toward your spine.
-Mantén esa conexión mientras sigues respirando. || Keep that connection as you keep breathing.
+Inhala por la nariz y deja que las costillas se abran hacia los lados. || Inhale through your nose and let your ribs widen to the sides.
+Exhala por la boca y siente cómo las costillas se cierran hacia la pelvis. || Exhale through your mouth and feel your ribs close toward your pelvis.
+Al final de la exhalación, lleva el ombligo suavemente hacia la columna. || At the end of the exhale, draw your navel gently toward your spine.
+Esa es la conexión del centro que vamos a mantener durante toda la clase. || That's the core connection we'll keep for the whole class.
+Inhala... || Inhale...
+Exhala y conecta. || Exhale and connect.
 * 5 respiraciones. || 5 breaths.
-Hombros lejos de las orejas. || Shoulders away from your ears.
-Cuello largo, mandíbula relajada. || Neck long, jaw relaxed.
-Estamos listos. || We're ready.`},
+Relaja los hombros, lejos de las orejas. || Relax your shoulders away from your ears.
+Alarga la nuca y relaja la mandíbula. || Lengthen the back of your neck and relax your jaw.
+Muy bien. Empezamos. || Very good. Let's begin.`},
 
 {t:{es:"Footwork completo",en:"Full footwork"}, sub:{es:"Cuatro posiciones, una pierna y elevaciones de talón",en:"Four positions, single leg and heel raises"}, min:7, demos:["footwork"],
 yt:"reformer pilates intermediate footwork single leg",
 how:{en:["Springs (typical): heavy, e.g. 3–4 springs. Single leg: take one spring off.","Keep a steady rhythm: exhale out, inhale in, no pause at either end.","Single leg: the pelvis stays level. If one hip lifts, shorten the range.","Wide second: knees track over the second toe; narrow the stance if the knees roll in."],
 es:["Muelles (habitual): pesados, p. ej. 3–4 muelles. Una pierna: quita un muelle.","Ritmo constante: exhala al salir, inhala al volver, sin pausa en los extremos.","Una pierna: la pelvis se queda nivelada. Si una cadera se levanta, reduce el recorrido.","Segunda abierta: rodillas sobre el segundo dedo; cierra un poco si las rodillas caen hacia dentro."]},
 s:`## Talones en paralelo || Parallel heels
-Talones sobre la barra, separados al ancho de las caderas. || Heels on the bar, hip-width apart.
+Empezamos con los talones sobre la barra, separados al ancho de las caderas. || We start with your heels on the bar, hip-width apart.
+Flexiona los pies: los dedos apuntan al techo. || Flex your feet: your toes point to the ceiling.
 Inhala para preparar. || Inhale to prepare.
-Exhala y empuja el carro hasta estirar las piernas. || Exhale and push the carriage out until your legs are long.
-Inhala y vuelve con control, resistiendo los muelles. || Inhale and come back with control, resisting the springs.
+Exhala y empuja la barra con los talones: el carro se aleja. || Exhale and press the bar with your heels: the carriage moves away.
+Estira las piernas por completo, pero sin bloquear las rodillas. || Straighten your legs fully, but don't lock your knees.
+Inhala y vuelve despacio, resistiendo los muelles. || Inhale and come back slowly, resisting the springs.
+El carro vuelve sin golpear. || The carriage comes back without banging.
+Continúa: exhala al salir, inhala al volver. || Keep going: exhale out, inhale in.
 * 10 repeticiones. || 10 reps.
-Pelvis quieta, costillas cerradas. || Pelvis still, ribs closed.
+Mientras te mueves, la pelvis se queda quieta. || As you move, your pelvis stays still.
+Las costillas siguen cerradas. || Your ribs stay closed.
+Últimas tres. Tres... dos... uno. || Last three. Three... two... one.
 ## Puntas en V || Toes in V
-Junta los talones y apoya las puntas de los pies en la barra, en forma de V. || Bring your heels together and place the balls of your feet on the bar in a V.
-Rodillas abiertas en la dirección de los dedos. || Knees open in the direction of your toes.
-Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
+Ahora junta los talones. || Now bring your heels together.
+Sube los talones y apoya solo la parte delantera de los pies en la barra. || Lift your heels and rest only the balls of your feet on the bar.
+Abre las puntas en una V pequeña. || Open your toes into a small V.
+Las rodillas se abren en la misma dirección que los dedos. || Your knees open in the same direction as your toes.
+Aprieta suavemente los talones entre sí. || Gently squeeze your heels together.
+Exhala y empuja. || Exhale and push.
+Inhala y vuelve. || Inhale and return.
 * 10 repeticiones. || 10 reps.
-Talones altos y quietos, como si llevaras tacones. || Heels high and still, as if you were wearing heels.
+Los talones se quedan altos y quietos, como si llevaras tacones. || Your heels stay high and still, as if you were wearing heels.
+No dejes que los talones bajen al volver. || Don't let your heels drop as you come back.
 ## Segunda abierta || Wide second
-Abre los pies hacia los extremos de la barra, con los talones apoyados. || Open your feet toward the ends of the bar, heels on.
-Rodillas hacia fuera, alineadas con los pies. || Knees out, in line with your feet.
-Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
+Separa los pies hacia los extremos de la barra. || Move your feet out toward the ends of the bar.
+Apoya los talones en la barra y gira las piernas hacia fuera desde la cadera. || Put your heels on the bar and turn your legs out from the hip.
+Las rodillas apuntan en la misma dirección que los pies. || Your knees point the same way as your feet.
+Exhala, empuja. || Exhale, push.
+Inhala, vuelve. || Inhale, return.
 * 10 repeticiones. || 10 reps.
-Aprieta la parte interna de los muslos al empujar. || Squeeze your inner thighs as you push.
+Al empujar, aprieta la parte interna de los muslos, como si quisieras juntar las piernas. || As you push, squeeze your inner thighs, as if you wanted to bring your legs together.
+Si las rodillas caen hacia dentro, acerca un poco los pies. || If your knees fall inward, bring your feet a little closer together.
 ## Una pierna || Single leg @singleleg
+Ahora quita un muelle para trabajar con una sola pierna. || Now take one spring off to work on one leg.
 Coloca el talón derecho en el centro de la barra. || Place your right heel in the center of the bar.
-Lleva la pierna izquierda a mesa: rodilla sobre la cadera. || Bring your left leg into tabletop: knee over your hip.
-Exhala y empuja con una sola pierna. || Exhale and push with one leg.
-Inhala y vuelve. Las caderas no se inclinan. || Inhale and come back. Your hips don't tilt.
+Lleva la pierna izquierda a mesa: rodilla sobre la cadera, espinilla paralela al techo. || Bring your left leg into tabletop: knee over your hip, shin parallel to the ceiling.
+Inhala para preparar. || Inhale to prepare.
+Exhala y empuja solo con la pierna derecha. || Exhale and push with your right leg only.
+Inhala y vuelve. || Inhale and come back.
+La pierna en mesa no se mueve. || The tabletop leg doesn't move.
+Las dos caderas pesan igual sobre el carro. || Both hips weigh the same on the carriage.
 * 8 por lado. || 8 per side.
-Cambia de pierna. || Switch legs.
+Últimas dos. Y vuelve. || Last two. And come back.
+Cambia: talón izquierdo en la barra y pierna derecha en mesa. || Switch: left heel on the bar and right leg in tabletop.
+Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
 ## Elevaciones de talón || Heel raises @running
-Las dos piernas estiradas, puntas de los pies en la barra. || Both legs straight, balls of the feet on the bar.
-Baja los dos talones por debajo de la barra. || Lower both heels under the bar.
-Sube los talones lo más alto que puedas. || Lift your heels as high as you can.
+Vuelve a poner los muelles pesados. || Put the heavy springs back on.
+Apoya las dos puntas de los pies en la barra, en paralelo. || Place both balls of the feet on the bar, parallel.
+Empuja el carro hasta estirar las piernas y quédate fuera. || Push the carriage out until your legs are straight and stay there.
+Inhala y baja los dos talones por debajo de la barra. || Inhale and lower both heels under the bar.
+Siente el estiramiento en los gemelos. || Feel the stretch in your calves.
+Exhala y sube los talones lo más alto que puedas. || Exhale and lift your heels as high as you can.
 * 10 repeticiones. || 10 reps.
-Ahora alterna, como si caminaras. || Now alternate, as if you were walking.
+Ahora alterna: baja un talón mientras doblas la otra rodilla. || Now alternate: lower one heel as you bend the other knee.
+Como si caminaras sin moverte del sitio. || As if you were walking on the spot.
 * 10 por lado. || 10 per side.
+Termina con las dos piernas estiradas. || Finish with both legs straight.
 Dobla las rodillas y vuelve a casa sin golpear. || Bend your knees and come home without banging.`},
 
 {t:{es:"Hundred con correas",en:"Hundred with straps"}, sub:{es:"Bombeo de brazos con resistencia",en:"Arm pumps with resistance"}, min:3, demos:["hundredstraps"],
@@ -501,243 +537,363 @@ yt:"reformer pilates hundred with straps",
 how:{en:["Springs (typical): light–medium, e.g. 1–2 springs.","Straps: the arms press down from the shoulders, not the elbows. Keep tension in the straps the whole time.","Offer three leg levels: tabletop, legs to the ceiling, legs on a low diagonal. Choose the one where the low back stays still.","Head down is always an option if the neck works."],
 es:["Muelles (habitual): ligeros–medios, p. ej. 1–2 muelles.","Correas: los brazos empujan desde los hombros, no desde los codos. Mantén tensión en las correas todo el tiempo.","Ofrece tres niveles de piernas: mesa, piernas al techo o diagonal baja. Elige el que mantiene quieta la zona lumbar.","Bajar la cabeza siempre es una opción si trabaja el cuello."]},
 s:`## Preparación || Set-up
-Coge una correa en cada mano. || Take a strap in each hand.
-Lleva las piernas a mesa, primero una y después la otra. || Bring your legs into tabletop, one and then the other.
-Brazos largos hacia el techo, sobre los hombros. || Arms long toward the ceiling, over your shoulders.
-Exhala: baja los brazos hasta las caderas y eleva la cabeza y los hombros. || Exhale: press your arms down to your hips and lift your head and shoulders.
+Ajusta los muelles a una resistencia ligera o media. || Set the springs to a light or medium resistance.
+Sin levantarte, alarga los brazos por encima de la cabeza y coge las correas. || Without getting up, reach your arms overhead and take the straps.
+Mete las manos en las asas, una en cada mano. || Slide your hands into the handles, one in each hand.
+Lleva los brazos hacia el techo, justo encima de los hombros. || Bring your arms up toward the ceiling, right above your shoulders.
+Levanta una pierna a mesa... y después la otra. || Lift one leg to tabletop... and then the other.
+Rodillas sobre las caderas, espinillas paralelas al techo. || Knees over your hips, shins parallel to the ceiling.
+## Entrar en la posición || Coming into position
+Inhala para preparar. || Inhale to prepare.
+Exhala y baja los brazos rectos hasta los lados de las caderas. || Exhale and press your straight arms down beside your hips.
+Al mismo tiempo, eleva la cabeza y los hombros del carro. || At the same time, lift your head and shoulders off the carriage.
 Mira hacia tus rodillas. || Look toward your knees.
+Las manos quedan unos centímetros por encima del carro. || Your hands stay a few centimetres above the carriage.
 ## Hundred || Hundred
-Bombea los brazos arriba y abajo, pequeño y rápido. || Pump your arms up and down, small and quick.
+Bombea los brazos arriba y abajo: pequeño, rápido y con energía. || Pump your arms up and down: small, quick and energetic.
+Inhala en cinco tiempos: uno, dos, tres, cuatro, cinco. || Inhale for five counts: one, two, three, four, five.
+Exhala en cinco tiempos: uno, dos, tres, cuatro, cinco. || Exhale for five counts: one, two, three, four, five.
 Inhala: dos, tres, cuatro, cinco. || Inhale: two, three, four, five.
 Exhala: dos, tres, cuatro, cinco. || Exhale: two, three, four, five.
-Continúa. || Keep going.
-Si puedes mantener la espalda estable, estira las piernas en diagonal. || If you can keep your back stable, extend your legs on a diagonal.
-Si no, quédate en mesa. || If not, stay in tabletop.
-Cuello largo, la mirada en el ombligo. || Neck long, eyes on your navel.
+Continúa con ese ritmo. || Keep that rhythm.
+El movimiento sale de los hombros, no de las muñecas. || The movement comes from your shoulders, not your wrists.
+Mantén las correas siempre con tensión. || Keep the straps under tension the whole time.
+Si tu espalda está estable, estira las piernas en diagonal hacia arriba. || If your back is stable, extend your legs upward on a diagonal.
+Si sientes la zona lumbar, vuelve a mesa. || If you feel your lower back, go back to tabletop.
+Si se te cansa el cuello, baja la cabeza y sigue con los brazos. || If your neck gets tired, lower your head and keep going with your arms.
 * 10 series de respiración. || 10 breath cycles.
-Últimas dos. || Last two.
-Vuelve a mesa, brazos al techo y baja la cabeza. || Back to tabletop, arms to the ceiling, lower your head.
-Deja las correas en su sitio con cuidado. || Put the straps back carefully.`},
+Últimas dos series. || Last two cycles.
+Última. || Last one.
+## Salir || Coming out
+Dobla las rodillas a mesa. || Bend your knees back to tabletop.
+Lleva los brazos de nuevo hacia el techo. || Bring your arms back up toward the ceiling.
+Baja la cabeza al reposacabezas. || Lower your head onto the headrest.
+Deja las correas en las manos: las vamos a usar ahora en los pies. || Keep the straps in your hands: we're going to use them on your feet next.`},
 
 {t:{es:"Pies en correas",en:"Feet in straps"}, sub:{es:"Rana, círculos y aperturas",en:"Frog, leg circles and openings"}, min:6, demos:["frog"],
 yt:"reformer pilates feet in straps frog leg circles",
 how:{en:["Springs (typical): medium, e.g. 2 springs.","Set up safely: one foot at a time into the straps, knees bent, then extend.","The rule for every exercise here: the pelvis doesn't move. Range comes second.","Watch the hip flexors: if the front of the hips grips, make the movements smaller and higher."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles.","Colocación segura: un pie cada vez en las correas, con las rodillas dobladas, y después estira.","La regla en todos estos ejercicios: la pelvis no se mueve. El recorrido viene después.","Vigila los flexores de cadera: si la parte delantera de la cadera se agarra, movimientos más pequeños y más altos."]},
 s:`## Preparación || Set-up
-Coloca las correas en los arcos de los pies, primero un pie y después el otro. || Place the straps around the arches of your feet, one foot and then the other.
-Lleva las piernas hacia el techo. || Bring your legs toward the ceiling.
-Brazos largos a los lados, presionando el carro. || Arms long by your sides, pressing into the carriage.
-Pelvis neutra y quieta. || Pelvis neutral and still.
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Dobla las rodillas hacia el pecho. || Bend your knees in toward your chest.
+Coloca la correa derecha en el arco del pie derecho. || Place the right strap around the arch of your right foot.
+Ahora la correa izquierda en el arco del pie izquierdo. || Now the left strap around the arch of your left foot.
+Estira las piernas hacia el techo. || Straighten your legs toward the ceiling.
+Brazos largos a los lados, presionando suavemente el carro. || Arms long by your sides, pressing gently into the carriage.
+Pelvis neutra y quieta: así se queda en todos estos ejercicios. || Pelvis neutral and still: that's how it stays for all of these exercises.
 ## Rana || Frog
-Talones juntos, rodillas abiertas: dobla las piernas. || Heels together, knees open: bend your legs.
-Exhala y estira las piernas en diagonal. || Exhale and extend your legs on a diagonal.
-Inhala y vuelve a doblar sin que la pelvis se mueva. || Inhale and bend again without moving your pelvis.
+Junta los talones y abre las rodillas, en forma de diamante. || Bring your heels together and open your knees into a diamond shape.
+Dobla las rodillas hacia ti, sin que la pelvis se levante. || Bend your knees toward you, without your pelvis lifting.
+Inhala para preparar. || Inhale to prepare.
+Exhala y estira las piernas en diagonal, apretando los talones. || Exhale and extend your legs on a diagonal, squeezing your heels together.
+Inhala y vuelve a doblar las rodillas, despacio. || Inhale and bend your knees again, slowly.
+El carro se mueve; la pelvis no. || The carriage moves; the pelvis doesn't.
 * 8 repeticiones. || 8 reps.
 Baja las piernas solo hasta donde la espalda se mantenga estable. || Only lower your legs as far as your back stays stable.
+Últimas tres. Tres... dos... uno. || Last three. Three... two... one.
 ## Círculos de piernas || Leg circles @legcircles
-Piernas largas y juntas, apuntando al techo. || Legs long and together, pointing to the ceiling.
-Abre las piernas, bájalas, júntalas y vuelve arriba. || Open your legs, lower them, bring them together and come back up.
-* 5 en cada dirección. || 5 in each direction.
-Círculos solo del tamaño que puedas controlar. || Circles only as big as you can control.
-La pelvis no se balancea. || The pelvis doesn't rock.
-## Aperturas || Openings @legcircles
-Piernas al techo, gíralas ligeramente hacia fuera desde la cadera. || Legs to the ceiling, turn them out slightly from the hip.
+Estira las piernas hacia el techo, juntas y largas. || Extend your legs toward the ceiling, long and together.
+Gira las piernas un poco hacia fuera desde la cadera. || Turn your legs out slightly from the hip.
 Inhala y abre las piernas hacia los lados. || Inhale and open your legs to the sides.
+Exhala, bájalas en diagonal y júntalas. || Exhale, lower them on a diagonal and bring them together.
+Sube de nuevo hacia el techo: eso es un círculo. || Come back up toward the ceiling: that's one circle.
+* 5 en cada dirección. || 5 in each direction.
+Ahora cambiamos de dirección: baja las piernas juntas, ábrelas y sube. || Now reverse: lower your legs together, open them and come up.
+Haz círculos solo del tamaño que puedas controlar. || Make circles only as big as you can control.
+La pelvis no se balancea de lado a lado. || Your pelvis doesn't rock from side to side.
+## Aperturas || Openings @legcircles
+Piernas hacia el techo, ligeramente giradas hacia fuera. || Legs toward the ceiling, slightly turned out.
+Inhala y abre las piernas hacia los lados, hasta donde sea cómodo. || Inhale and open your legs to the sides, as far as is comfortable.
 Exhala y júntalas, apretando la parte interna de los muslos. || Exhale and draw them together, squeezing your inner thighs.
+Imagina que cierras una puerta pesada con las piernas. || Imagine closing a heavy door with your legs.
 * 8 repeticiones. || 8 reps.
-Dobla las rodillas y saca las correas con cuidado. || Bend your knees and take the straps off carefully.`},
+## Salir || Coming out
+Dobla las rodillas hacia el pecho. || Bend your knees in toward your chest.
+Saca las correas de los pies, primero una y después la otra. || Take the straps off your feet, one and then the other.
+Deja las correas en su sitio con cuidado. || Put the straps back carefully.
+Rueda hacia un lado y siéntate despacio. || Roll to one side and sit up slowly.`},
 
 {t:{es:"Stomach massage",en:"Stomach massage"}, sub:{es:"Sentada: espalda redonda y manos atrás",en:"Seated: round back and hands back"}, min:5, demos:["stomach"],
 yt:"reformer pilates stomach massage series",
 how:{en:["Springs (typical): medium, e.g. 2–3 springs.","Sit close enough to the shoulder rests that the spine can round without leaning on them.","Round back: the shape of the spine stays fixed; the legs and ankles do all the moving.","Hands back: lift up out of the hips; don't let the chest collapse or the ribs flare."],
 es:["Muelles (habitual): medios, p. ej. 2–3 muelles.","Siéntate lo bastante cerca de los apoyos de hombros para redondear sin apoyarte en ellos.","Espalda redonda: la forma de la columna no cambia; las piernas y los tobillos hacen todo el movimiento.","Manos atrás: crece desde las caderas; que el pecho no se hunda ni las costillas se abran."]},
 s:`## Preparación || Set-up
-Siéntate en el carro, cerca de los apoyos de hombros, mirando hacia la barra. || Sit on the carriage close to the shoulder rests, facing the bar.
-Puntas de los pies en la barra, talones juntos en V. || Balls of your feet on the bar, heels together in a V.
-Manos en el borde del carro, junto a las caderas. || Hands on the edge of the carriage, beside your hips.
-Redondea la espalda, como una C. || Round your back into a C.
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Siéntate en el carro, mirando hacia la barra. || Sit on the carriage, facing the bar.
+Acércate a los apoyos de hombros, pero sin apoyarte en ellos. || Move close to the shoulder rests, but don't lean on them.
+Junta los talones y apoya las puntas de los pies en la barra, en V. || Bring your heels together and place the balls of your feet on the bar in a V.
+Las rodillas están dobladas y abiertas en la dirección de los pies. || Your knees are bent and open in the direction of your feet.
+Coloca las manos en el borde del carro, junto a las caderas. || Place your hands on the edge of the carriage, beside your hips.
+Ahora redondea la espalda: lleva el ombligo hacia dentro y forma una C con la columna. || Now round your back: draw your navel in and make a C with your spine.
+La mirada va hacia el ombligo. || Your gaze goes toward your navel.
 ## Espalda redonda || Round back
-Exhala y empuja el carro estirando las piernas. || Exhale and push the carriage out, straightening your legs.
-Baja los talones por debajo de la barra. || Lower your heels under the bar.
-Sube los talones. || Lift your heels.
-Inhala, dobla las rodillas y vuelve. || Inhale, bend your knees and come back.
+Inhala para preparar. || Inhale to prepare.
+Exhala y empuja la barra para estirar las piernas. || Exhale and press the bar to straighten your legs.
+Con las piernas estiradas, baja los talones por debajo de la barra. || With your legs straight, lower your heels under the bar.
+Sube los talones de nuevo. || Lift your heels again.
+Inhala, dobla las rodillas y vuelve con control. || Inhale, bend your knees and come back with control.
+Ese es el ciclo: estira, baja, sube y vuelve. || That's the cycle: straighten, lower, lift and return.
 * 8 repeticiones. || 8 reps.
-La C no cambia: solo se mueven las piernas. || The C doesn't change: only your legs move.
+La forma de C no cambia: solo se mueven las piernas y los tobillos. || The C shape doesn't change: only your legs and ankles move.
+No te apoyes en las manos; el abdomen te sostiene. || Don't lean on your hands; your abs hold you up.
+Últimas dos. || Last two.
 ## Manos atrás || Hands back
-Lleva las manos atrás, sobre los apoyos de hombros. || Take your hands back onto the shoulder rests.
-Siéntate alto, con la columna larga. || Sit tall, spine long.
-Empuja, baja los talones, súbelos y vuelve. || Push, lower your heels, lift them and come back.
+Ahora lleva las manos atrás y apóyalas sobre los apoyos de hombros. || Now take your hands back and rest them on the shoulder rests.
+Siéntate alto: crece desde las caderas hasta la coronilla. || Sit tall: grow from your hips up to the crown of your head.
+Abre el pecho, pero mantén las costillas cerradas. || Open your chest, but keep your ribs closed.
+Exhala y estira las piernas. || Exhale and straighten your legs.
+Baja los talones... y súbelos. || Lower your heels... and lift them.
+Inhala y vuelve. || Inhale and return.
 * 6 repeticiones. || 6 reps.
-Abre el pecho sin abrir las costillas. || Open your chest without flaring your ribs.
+La espalda no se mueve mientras las piernas trabajan. || Your back doesn't move while your legs work.
 ## Estiramiento final || Final stretch
-Estira las piernas y quédate fuera. || Straighten your legs and stay out.
-Lleva los brazos al frente y redondea hacia tus piernas. || Reach your arms forward and round toward your legs.
-Respira. || Breathe.
-Vuelve con control y bájate de la máquina con cuidado. || Come back with control and step off the machine carefully.`},
+Estira las piernas y deja el carro fuera. || Straighten your legs and keep the carriage out.
+Lleva los brazos al frente, a la altura de los hombros. || Reach your arms forward, at shoulder height.
+Redondea suavemente hacia tus piernas. || Round gently toward your legs.
+Respira aquí. || Breathe here.
+Rueda hacia arriba y vuelve a casa con control. || Roll up and come home with control.
+Bájate de la máquina con cuidado: ahora vamos a colocar el cajón. || Step off the machine carefully: now we're going to set up the box.`},
 
 {t:{es:"Short box",en:"Short box"}, sub:{es:"Espalda redonda, espalda plana y torsión",en:"Round back, flat back and twist"}, min:6, demos:["shortbox"],
 yt:"reformer pilates short box series round back flat back twist",
 how:{en:["Springs: most teachers use a medium spring so the carriage doesn't move. Check the foot strap is secure before anyone leans back.","Round back: the movement starts with a pelvic tuck; stop when the abdomen starts to dome.","Flat back: a long line from head to tailbone, hinging from the hips. A small range is fine.","Twist: hips square and still; rotation comes from the ribcage, not the arms."],
 es:["Muelles: lo habitual es un muelle medio para que el carro no se mueva. Comprueba que la correa de pies está bien sujeta antes de inclinarse hacia atrás.","Espalda redonda: el movimiento empieza basculando la pelvis; para cuando el abdomen se empiece a abombar.","Espalda plana: una línea larga de la cabeza al coxis, inclinando desde las caderas. Un recorrido pequeño está bien.","Torsión: caderas cuadradas y quietas; la rotación viene de la caja torácica, no de los brazos."]},
 s:`## Preparación || Set-up
-Coloca el cajón corto a lo ancho del carro, contra los apoyos de hombros. || Place the short box across the carriage, against the shoulder rests.
+Coloca el cajón corto a lo ancho del carro, pegado a los apoyos de hombros. || Place the short box across the carriage, against the shoulder rests.
+Pon un muelle medio: el carro tiene que quedarse quieto. || Use a medium spring: the carriage needs to stay still.
+Comprueba que la correa de pies está bien sujeta. || Check that the foot strap is secure.
 Siéntate en el centro del cajón, mirando hacia la barra. || Sit in the middle of the box, facing the bar.
-Mete los pies por debajo de la correa de pies y flexiónalos. || Hook your feet under the foot strap and flex them.
-Rodillas ligeramente dobladas. || Knees slightly bent.
+Mete los pies por debajo de la correa y flexiónalos, empujando la correa hacia arriba. || Slide your feet under the strap and flex them, pressing up into the strap.
+Las rodillas, ligeramente dobladas y al ancho de las caderas. || Knees slightly bent and hip-width apart.
+Siéntate alto, justo encima de los isquiones. || Sit tall, right on top of your sit bones.
 ## Espalda redonda || Round back
 Cruza los brazos a la altura del pecho. || Cross your arms at chest height.
 Inhala y crece hacia arriba. || Inhale and grow tall.
-Exhala, bascula la pelvis y redondea hacia atrás. || Exhale, tuck your pelvis and round back.
-Solo hasta donde puedas mantener el abdomen plano. || Only as far as you can keep your abdomen flat.
-Inhala y quédate. || Inhale and stay.
-Exhala y vuelve a sentarte alto. || Exhale and come back up to sitting tall.
+Exhala y bascula la pelvis: el coxis va hacia debajo de ti. || Exhale and tuck your pelvis: your tailbone curls under you.
+Redondea la espalda y baja hacia atrás, vértebra por vértebra. || Round your back and lower back, one vertebra at a time.
+Baja solo hasta donde el abdomen se quede plano. || Only go as far as your abdomen stays flat.
+Inhala y quédate ahí. || Inhale and stay there.
+Exhala y vuelve a subir, redondeando hacia delante. || Exhale and come back up, rounding forward.
+Termina creciendo otra vez hacia arriba. || Finish by growing tall again.
 * 6 repeticiones. || 6 reps.
+Si el abdomen se abomba, reduce el recorrido. || If your abdomen domes, make the range smaller.
 ## Espalda plana || Flat back @flatback
-Brazos arriba, junto a las orejas. || Arms up, beside your ears.
+Ahora lleva los brazos arriba, junto a las orejas. || Now raise your arms up beside your ears.
 Inhala y crece. || Inhale and grow tall.
-Exhala e inclínate hacia atrás con la espalda recta, como una tabla. || Exhale and hinge back with a straight back, like a plank.
-Inhala y vuelve arriba. || Inhale and come back up.
+Exhala e inclínate hacia atrás desde las caderas, con la espalda totalmente recta. || Exhale and hinge back from your hips, with your back completely straight.
+Imagina que tu cuerpo es una tabla, de la cabeza al coxis. || Imagine your body is a plank, from head to tailbone.
+Inhala y vuelve arriba con la espalda recta. || Inhale and come back up with your back straight.
 * 5 repeticiones. || 5 reps.
-Las costillas no se abren. || Your ribs don't flare.
+Las costillas no se abren y los brazos no se van hacia atrás. || Your ribs don't flare and your arms don't drop back.
+Un recorrido pequeño está bien. || A small range is fine.
 ## Torsión || Twist @shortbox
-Manos detrás de la cabeza, codos abiertos. || Hands behind your head, elbows wide.
-Gira hacia la derecha desde la cintura. || Rotate to the right from your waist.
-Vuelve al centro. Ahora hacia la izquierda. || Back to center. Now to the left.
+Pon las manos detrás de la cabeza, con los codos abiertos. || Put your hands behind your head, elbows wide.
+Siéntate alto. || Sit tall.
+Exhala y gira hacia la derecha desde la cintura. || Exhale and rotate to the right from your waist.
+Las caderas miran hacia la barra; solo gira el pecho. || Your hips face the bar; only your chest turns.
+Inhala y vuelve al centro. || Inhale and return to center.
+Exhala y gira hacia la izquierda. || Exhale and rotate to the left.
+Inhala y al centro. || Inhale and back to center.
 * 4 por lado. || 4 per side.
-Las caderas no se mueven: gira solo la caja torácica. || Your hips don't move: only your ribcage turns.`},
+Crece un poco más con cada giro. || Grow a little taller with each twist.
+Saca los pies de la correa y bájate del cajón. || Take your feet out of the strap and come off the box.`},
 
 {t:{es:"Long box: tirar de las correas",en:"Long box: pulling straps"}, sub:{es:"Boca abajo: extensión de espalda",en:"Face down: back extension"}, min:4, demos:["pullstraps"],
 yt:"reformer pilates long box pulling straps T pull",
 how:{en:["Springs (typical): light, e.g. 1 spring.","Lift the chest only as high as the abs can support; the low back shouldn't pinch.","Lead with the shoulder blades sliding down, not with the hands.","Keep the neck in line with the spine: no looking up."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle.","Eleva el pecho solo hasta donde el abdomen te sostenga; la zona lumbar no debe pinzarse.","El movimiento lo empiezan las escápulas bajando, no las manos.","Cuello en línea con la columna: no mires hacia arriba."]},
 s:`## Preparación || Set-up
-Coloca el cajón largo a lo largo del carro, contra los apoyos de hombros. || Place the long box lengthwise on the carriage, against the shoulder rests.
-Túmbate boca abajo, con el pecho en el extremo del cajón más cercano a las correas. || Lie face down, chest at the end of the box nearest the straps.
-Coge las correas por las cuerdas, con los brazos largos hacia delante. || Hold the straps by the ropes, arms long in front of you.
-Piernas largas y juntas, abdomen despegado del cajón. || Legs long and together, abdomen lifted off the box.
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Gira el cajón y colócalo a lo largo del carro, contra los apoyos de hombros. || Turn the box and place it lengthwise on the carriage, against the shoulder rests.
+Túmbate boca abajo sobre el cajón, con la cabeza hacia las correas. || Lie face down on the box with your head toward the straps.
+El pecho queda justo en el borde del cajón; los hombros, por fuera. || Your chest is right at the edge of the box; your shoulders are past it.
+Coge las correas por las cuerdas, por encima de las hebillas. || Hold the straps by the ropes, above the buckles.
+Brazos largos hacia delante y hacia abajo, en línea con los hombros. || Arms long, forward and down, in line with your shoulders.
+Piernas largas y juntas, apoyadas sobre el cajón. || Legs long and together, resting on the box.
+Activa el abdomen: despega el ombligo del cajón. || Engage your abs: lift your navel away from the box.
 ## Tirar de las correas || Pulling straps
-Inhala y prepara. || Inhale to prepare.
-Exhala y tira de los brazos rectos hacia las caderas, elevando el pecho. || Exhale and pull your straight arms down to your hips, lifting your chest.
+Inhala para preparar. || Inhale to prepare.
+Exhala: baja las escápulas y tira de los brazos rectos hacia las caderas. || Exhale: draw your shoulder blades down and pull your straight arms toward your hips.
+Mientras tiras, eleva un poco el pecho. || As you pull, lift your chest a little.
+El carro se acerca a las correas. || The carriage moves toward the straps.
 Inhala y vuelve despacio, alargando la espalda. || Inhale and return slowly, lengthening your back.
 * 6 repeticiones. || 6 reps.
-La mirada hacia abajo y un poco al frente. || Eyes down and slightly forward.
+Mira hacia abajo y un poco al frente: el cuello sigue la línea de la columna. || Look down and slightly forward: your neck follows the line of your spine.
+Las piernas no se levantan. || Your legs don't lift.
 ## Brazos en T || T-pull
-Abre los brazos hacia los lados, en forma de T. || Open your arms out to the sides, in a T.
+Ahora abre los brazos hacia los lados, en forma de T. || Now open your arms out to the sides, in a T.
+Las palmas miran hacia el suelo. || Your palms face the floor.
 Exhala y lleva los brazos hacia las caderas, juntando las escápulas. || Exhale and sweep your arms to your hips, drawing your shoulder blades together.
-Inhala y vuelve. || Inhale and return.
+Eleva un poco el pecho. || Lift your chest a little.
+Inhala y vuelve a la T, despacio. || Inhale and return to the T, slowly.
 * 6 repeticiones. || 6 reps.
 Glúteos suaves, piernas largas. || Glutes soft, legs long.
-Suelta las correas con cuidado y baja del cajón. || Release the straps carefully and come off the box.`},
+## Salir || Coming out
+Lleva los brazos al frente y deja que el carro vuelva a casa. || Reach your arms forward and let the carriage come home.
+Suelta las correas con cuidado. || Release the straps carefully.
+Bájate del cajón y quítalo de la máquina. || Come off the box and take it off the machine.`},
 
 {t:{es:"Knee stretch",en:"Knee stretch"}, sub:{es:"Espalda redonda y espalda plana",en:"Round back and flat back"}, min:4, demos:["kneestretch"],
 yt:"reformer pilates knee stretch round back flat back",
 how:{en:["Springs (typical): medium, e.g. 2 springs.","Shoulders stay stacked over the wrists for the whole set.","The carriage moves from the hips and thighs; the back keeps its shape.","Flat back is harder: don't let the low back sag. Go back to round back if it does."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles.","Los hombros se quedan sobre las muñecas durante toda la serie.","El carro se mueve desde las caderas y los muslos; la espalda mantiene su forma.","La espalda plana es más difícil: que la zona lumbar no se hunda. Si se hunde, vuelve a espalda redonda."]},
-s:`## Espalda redonda || Round back
-Arrodíllate en el carro, con los pies contra los apoyos de hombros. || Kneel on the carriage, feet against the shoulder rests.
-Manos en la barra, a la anchura de los hombros. || Hands on the bar, shoulder-width apart.
-Redondea la espalda y mira hacia las rodillas. || Round your back and look toward your knees.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Arrodíllate en el carro, mirando hacia la barra. || Kneel on the carriage, facing the bar.
+Apoya los pies contra los apoyos de hombros. || Put your feet against the shoulder rests.
+Coloca las manos sobre la barra, a la anchura de los hombros. || Place your hands on the bar, shoulder-width apart.
+Los hombros quedan justo encima de las muñecas. || Your shoulders are right above your wrists.
+## Espalda redonda || Round back
+Redondea la espalda, como un gato. || Round your back, like a cat.
+La mirada va hacia las rodillas. || Your gaze goes toward your knees.
 Exhala y empuja el carro hacia atrás con las piernas. || Exhale and push the carriage back with your legs.
+Inhala y vuelve con control. || Inhale and come back with control.
+* 10 repeticiones. || 10 reps.
+La espalda se queda redonda; solo se mueven las piernas. || Your back stays round; only your legs move.
+Los brazos se quedan fuertes y quietos. || Your arms stay strong and still.
+Últimas tres. Tres... dos... uno. || Last three. Three... two... one.
+## Espalda plana || Flat back
+Ahora alarga la espalda: plana como una mesa. || Now lengthen your back: flat as a table.
+El pecho va hacia delante y el coxis hacia atrás. || Your chest goes forward and your tailbone goes back.
+Mira al suelo, justo delante de la barra. || Look at the floor, just in front of the bar.
+Exhala y empuja el carro. || Exhale and push the carriage.
 Inhala y vuelve. || Inhale and return.
 * 10 repeticiones. || 10 reps.
-## Espalda plana || Flat back
-Alarga la espalda: plana como una mesa. || Lengthen your back: flat as a table.
-Pecho hacia delante, coxis hacia atrás. || Chest forward, tailbone back.
-Empuja y vuelve, con el mismo ritmo. || Push and return, same rhythm.
-* 10 repeticiones. || 10 reps.
-El tronco no se mueve; solo las piernas. || Your torso doesn't move; only your legs.
+Que la zona lumbar no se hunda. || Don't let your low back sag.
+Si se hunde, vuelve a la espalda redonda. || If it sags, go back to round back.
 ## Para terminar || To finish
 Vuelve a casa sin golpear. || Come home without banging.
-Siéntate sobre los talones y respira. || Sit back on your heels and breathe.`},
+Siéntate sobre los talones y deja las manos en la barra. || Sit back on your heels and leave your hands on the bar.
+Respira y relaja los hombros. || Breathe and relax your shoulders.`},
 
 {t:{es:"Serie de long stretch",en:"Long stretch series"}, sub:{es:"Long stretch, down stretch, up stretch y elephant",en:"Long stretch, down stretch, up stretch and elephant"}, min:6, demos:["longstretch"],
 yt:"reformer pilates long stretch series down stretch up stretch",
 how:{en:["Springs (typical): light–medium, e.g. 1–2 springs. Never too light: the carriage can shoot out.","Plank: shoulders over wrists, ribs closed, glutes and inner thighs on.","Down stretch is a gentle extension: lift the chest, don't crunch the low back.","Step on and off with care; keep one hand on the bar until the feet are set."],
 es:["Muelles (habitual): ligeros–medios, p. ej. 1–2 muelles. Nunca demasiado ligeros: el carro puede salir disparado.","Plancha: hombros sobre las muñecas, costillas cerradas, glúteos y aductores activos.","El down stretch es una extensión suave: eleva el pecho sin hundir la zona lumbar.","Sube y baja de la máquina con cuidado; una mano en la barra hasta tener los pies colocados."]},
-s:`## Long stretch || Long stretch
-Manos en la barra, a la anchura de los hombros. || Hands on the bar, shoulder-width apart.
-Puntas de los pies contra los apoyos de hombros, talones arriba. || Balls of your feet against the shoulder rests, heels lifted.
-Cuerpo en plancha: una línea de la cabeza a los talones. || Body in a plank: one line from head to heels.
-Inhala y lleva el carro hacia atrás. || Inhale and take the carriage back.
-Exhala y vuelve. || Exhale and come back.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia ligera o media; nunca demasiado ligera. || Set the springs to a light or medium resistance; never too light.
+Coloca las manos sobre la barra, a la anchura de los hombros. || Place your hands on the bar, shoulder-width apart.
+Pisa el carro con un pie y apoya la punta contra el apoyo de hombros. || Step one foot onto the carriage and put the ball of the foot against the shoulder rest.
+Ahora el otro pie, también contra el apoyo de hombros. || Now the other foot, also against the shoulder rest.
+## Long stretch || Long stretch
+Estira las piernas y forma una plancha. || Straighten your legs and come into a plank.
+Una línea recta de la cabeza a los talones. || One straight line from your head to your heels.
+Los hombros, encima de las muñecas. || Shoulders over your wrists.
+Glúteos y aductores activos, costillas cerradas. || Glutes and inner thighs on, ribs closed.
+Inhala y empuja el carro hacia atrás con los pies, sin romper la línea. || Inhale and push the carriage back with your feet, without breaking the line.
+Exhala y vuelve, hasta tener otra vez los hombros sobre las muñecas. || Exhale and come back until your shoulders are over your wrists again.
 * 5 repeticiones. || 5 reps.
-Hombros sobre las muñecas al volver. || Shoulders over your wrists as you return.
+Mueves todo el cuerpo como una sola pieza. || You move your whole body as one piece.
+No dejes caer las caderas. || Don't let your hips drop.
 ## Down stretch || Down stretch @downstretch
-Baja las rodillas al carro, con los pies contra los apoyos de hombros. || Lower your knees onto the carriage, feet against the shoulder rests.
-Caderas adelante, pecho abierto: una extensión suave. || Hips forward, chest open: a gentle extension.
-Inhala y empuja el carro hacia atrás. || Inhale and push the carriage back.
-Exhala y vuelve, alargando la columna. || Exhale and return, lengthening your spine.
+Desde la plancha, baja las rodillas al carro. || From the plank, lower your knees onto the carriage.
+Los pies siguen contra los apoyos de hombros. || Your feet stay against the shoulder rests.
+Lleva las caderas hacia delante y abre el pecho. || Bring your hips forward and open your chest.
+Es una extensión suave: piensa en alargarte hacia arriba, no en hundirte. || It's a gentle extension: think of lengthening up, not sinking down.
+Inhala y empuja el carro hacia atrás con los brazos. || Inhale and push the carriage back with your arms.
+Exhala y vuelve, llevando el carro con el abdomen. || Exhale and come back, drawing the carriage in with your abs.
 * 5 repeticiones. || 5 reps.
 Abdomen activo para proteger la zona lumbar. || Abs on to protect your low back.
 ## Up stretch || Up stretch @upstretch
-Sube a plancha y lleva las caderas hacia el techo. || Come up to plank and lift your hips toward the ceiling.
-Inhala y empuja el carro hacia atrás, bajando a plancha. || Inhale and push the carriage back, lowering into plank.
-Exhala y vuelve, subiendo las caderas. || Exhale and return, lifting your hips.
+Vuelve a la plancha, y ahora sube las caderas hacia el techo. || Come back to plank, and now lift your hips toward the ceiling.
+Los hombros siguen encima de las muñecas. || Your shoulders stay over your wrists.
+Inhala y empuja el carro hacia atrás, bajando las caderas hasta la plancha. || Inhale and push the carriage back, lowering your hips into plank.
+Exhala y vuelve, subiendo las caderas hacia el techo. || Exhale and come back, lifting your hips toward the ceiling.
 * 5 repeticiones. || 5 reps.
+El abdomen tira de las caderas hacia arriba. || Your abs pull your hips up.
 ## Elephant || Elephant @elephant
-Caderas altas, talones apoyados en el carro, contra los apoyos de hombros. || Hips high, heels down on the carriage against the shoulder rests.
-Exhala y empuja el carro hacia atrás. || Exhale and push the carriage back.
+Con las caderas altas, baja los talones al carro, contra los apoyos de hombros. || With your hips high, lower your heels onto the carriage, against the shoulder rests.
+Forma una V invertida; la cabeza cuelga entre los brazos. || Make an upside-down V; your head hangs between your arms.
+Exhala y empuja el carro hacia atrás con las piernas. || Exhale and push the carriage back with your legs.
 Inhala y vuelve. || Inhale and return.
 * 8 repeticiones. || 8 reps.
-Cabeza pesada, abdomen hacia dentro. || Head heavy, belly in.
-Vuelve a casa y bájate de la máquina. || Come home and step off the machine.`},
+El tronco y las caderas no se mueven: solo se mueve el carro. || Your torso and hips don't move: only the carriage moves.
+Últimas tres. Tres... dos... uno. || Last three. Three... two... one.
+Vuelve a casa y baja al suelo, primero un pie y después el otro. || Come home and step down to the floor, one foot and then the other.`},
 
 {t:{es:"Brazos de rodillas",en:"Kneeling arm work"}, sub:{es:"Expansión de pecho con correas",en:"Chest expansion with straps"}, min:3, demos:["chestexp"],
 yt:"reformer pilates kneeling chest expansion",
 how:{en:["Springs (typical): light, e.g. 1 spring.","Knees close to the shoulder rests for stability; pad the knees if needed.","The torso stays vertical: no leaning back as the arms pull.","Head turns are small and smooth; skip them for anyone with neck issues."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle.","Rodillas cerca de los apoyos de hombros para tener estabilidad; pon algo blando bajo las rodillas si hace falta.","El tronco se queda vertical: no te inclines hacia atrás al tirar.","Los giros de cabeza son pequeños y suaves; sáltalos si hay molestias en el cuello."]},
 s:`## Preparación || Set-up
-Arrodíllate en el carro mirando hacia las correas. || Kneel on the carriage facing the straps.
-Rodillas cerca de los apoyos de hombros, separadas al ancho de las caderas. || Knees close to the shoulder rests, hip-width apart.
-Coge las correas, con los brazos largos delante de ti. || Hold the straps, arms long in front of you.
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Sube al carro y arrodíllate mirando hacia las correas. || Get onto the carriage and kneel facing the straps.
+Las rodillas, cerca de los apoyos de hombros y al ancho de las caderas. || Knees close to the shoulder rests and hip-width apart.
+Los pies, relajados hacia la barra. || Feet relaxed toward the bar.
+Coge una correa en cada mano. || Take a strap in each hand.
+Brazos largos al frente, a la altura de las caderas. || Arms long in front, at hip height.
 Crece desde las rodillas hasta la coronilla. || Grow tall from your knees to the crown of your head.
 ## Expansión de pecho || Chest expansion
-Exhala y tira de los brazos rectos hacia atrás, junto a las caderas. || Exhale and pull your straight arms back past your hips.
-Gira la cabeza a la derecha, al centro, a la izquierda y al centro. || Turn your head right, center, left, center.
-Inhala y vuelve con control. || Inhale and return with control.
+Inhala para preparar. || Inhale to prepare.
+Exhala y tira de los brazos rectos hacia atrás, por detrás de las caderas. || Exhale and pull your straight arms back, behind your hips.
+Abre el pecho. || Open your chest.
+Gira la cabeza a la derecha... al centro... a la izquierda... y al centro. || Turn your head to the right... center... to the left... and center.
+Inhala y deja que los brazos vuelvan al frente, con control. || Inhale and let your arms come back to the front, with control.
 * 6 repeticiones. || 6 reps.
-El tronco no se inclina: solo se mueven los brazos. || Your torso doesn't lean: only your arms move.
-Pecho abierto, costillas cerradas. || Chest open, ribs closed.`},
+El tronco no se inclina hacia atrás: solo se mueven los brazos. || Your torso doesn't lean back: only your arms move.
+Las costillas siguen cerradas aunque el pecho se abra. || Your ribs stay closed even as your chest opens.
+Suelta las correas con cuidado y siéntate sobre los talones. || Release the straps carefully and sit back on your heels.`},
 
 {t:{es:"Mermaid con torsión",en:"Mermaid with twist"}, sub:{es:"Estiramiento lateral y rotación",en:"Side stretch and rotation"}, min:4, demos:["mermaid"],
 yt:"reformer pilates mermaid with twist",
 how:{en:["Springs (typical): light, e.g. 1 spring.","The stretch comes from lengthening, not collapsing: keep the waist long on both sides.","In the twist, the hips stay grounded; rotation comes from the ribcage.","Do the full sequence on both sides."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle.","El estiramiento viene de alargar, no de hundirse: la cintura larga por los dos lados.","En la torsión, las caderas se quedan apoyadas; la rotación viene de la caja torácica.","Haz la secuencia completa por los dos lados."]},
 s:`## Preparación || Set-up
-Siéntate de lado en el carro, con las piernas dobladas en Z o cruzadas. || Sit sideways on the carriage, legs in a Z-sit or crossed.
-La mano más cercana a la barra, sobre la barra. || The hand nearest the bar goes on the bar.
-El otro brazo largo hacia el techo. || Reach your other arm long toward the ceiling.
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Siéntate de lado sobre el carro, con la barra a tu derecha. || Sit sideways on the carriage, with the bar on your right.
+Dobla las piernas en Z o crúzalas, como te resulte más cómodo. || Fold your legs in a Z-sit or cross them, whichever is more comfortable.
+La mano derecha, sobre la barra. || Your right hand on the bar.
+El brazo izquierdo, largo hacia el techo. || Your left arm long toward the ceiling.
 ## Mermaid || Mermaid
-Exhala y empuja la barra, alargando el cuerpo hacia el lado. || Exhale and push the bar away, lengthening your body to the side.
-Inhala y quédate: respira hacia las costillas de arriba. || Inhale and stay: breathe into your top ribs.
-Exhala y vuelve, llevando el brazo hacia el lado contrario. || Exhale and return, reaching your arm over the other way.
+Inhala y crece. || Inhale and grow tall.
+Exhala, empuja la barra con la mano derecha y alarga el cuerpo hacia la derecha. || Exhale, push the bar with your right hand and lengthen your body to the right.
+El brazo izquierdo dibuja un arco por encima de la cabeza. || Your left arm draws an arc over your head.
+Inhala aquí y respira hacia las costillas de la izquierda. || Inhale here and breathe into your left ribs.
+Exhala y vuelve al centro. || Exhale and come back to center.
+Ahora inclínate hacia la izquierda, alejándote de la barra. || Now bend to the left, away from the bar.
 * 3 repeticiones. || 3 reps.
+Alarga la cintura por los dos lados; no te hundas. || Lengthen your waist on both sides; don't collapse.
 ## Torsión || Twist
-Con el carro fuera, gira el pecho hacia la barra. || With the carriage out, turn your chest toward the bar.
-Las dos manos en la barra. || Both hands on the bar.
+Empuja el carro hacia fuera y quédate. || Push the carriage out and stay.
+Gira el pecho hacia la barra y pon las dos manos sobre ella. || Turn your chest toward the bar and put both hands on it.
+Las caderas se quedan apoyadas en el carro. || Your hips stay down on the carriage.
 Inhala y empuja el carro con la espalda larga. || Inhale and push the carriage with a long back.
-Exhala y vuelve. || Exhale and come back.
+Exhala y vuelve, redondeando un poco. || Exhale and come back, rounding slightly.
 * 3 repeticiones. || 3 reps.
-Cambia de lado y repite. || Change sides and repeat.`},
+Vuelve al centro y deja que el carro vuelva a casa. || Come back to center and let the carriage come home.
+## Cambiar de lado || Change sides
+Gira hacia el otro lado: ahora la barra está a tu izquierda. || Turn around: now the bar is on your left.
+Mano izquierda en la barra, brazo derecho hacia el techo. || Left hand on the bar, right arm toward the ceiling.
+Repite el mermaid y la torsión hacia este lado. || Repeat the mermaid and the twist on this side.
+* 3 repeticiones. || 3 reps.
+Muy bien. || Very good.`},
 
 {t:{es:"Vuelta a la calma",en:"Cool-down"}, sub:{es:"Estiramiento sentada y respiraciones finales",en:"Seated stretch and final breaths"}, min:3, demos:["fold"],
 yt:"reformer pilates cool down stretch",
 how:{en:["Bring the energy down: slower voice, fewer cues.","Invite students to notice the difference from the start of class.","If you can, use this moment for one piece of personal feedback per student."],
 es:["Baja la energía: voz más lenta, menos indicaciones.","Invita a notar la diferencia con el principio de la clase.","Si puedes, aprovecha para dar un comentario personal a cada persona."]},
-s:`Siéntate en el carro mirando hacia la barra, con las piernas largas o cruzadas. || Sit on the carriage facing the bar, legs long or crossed.
+s:`Siéntate en el carro mirando hacia la barra. || Sit on the carriage facing the bar.
+Estira las piernas o crúzalas, como te resulte más cómodo. || Stretch your legs out or cross them, whichever is more comfortable.
 Alarga la columna. || Lengthen your spine.
-Inhala, y al exhalar inclínate hacia delante. || Inhale, and as you exhale fold forward.
-Deja la cabeza pesada. || Let your head hang heavy.
-Respira. || Breathe.
+Inhala y lleva los brazos hacia el techo. || Inhale and reach your arms up toward the ceiling.
+Exhala e inclínate hacia delante, despacio. || Exhale and fold forward, slowly.
+Deja la cabeza pesada y los hombros relajados. || Let your head hang heavy and your shoulders relax.
+No hace falta llegar lejos. || You don't need to go far.
+Respira aquí tres veces. || Breathe here three times.
 Rueda hacia arriba, vértebra por vértebra. || Roll up one vertebra at a time.
+La cabeza es lo último en subir. || Your head is the last thing to come up.
 ## Respiración final || Final breathing @breath
-Tres respiraciones profundas. || Three deep breaths.
-Inhala y abre las costillas. || Inhale and open your ribs.
-Exhala y suelta. || Exhale and let go.
+Vamos a terminar con tres respiraciones profundas. || Let's finish with three deep breaths.
+Inhala por la nariz y abre las costillas. || Inhale through your nose and open your ribs.
+Exhala por la boca y suelta. || Exhale through your mouth and let go.
 Una vez más. || Once more.
+Inhala... || Inhale...
+Y exhala. || And exhale.
 Última. || Last one.
-Hoy has trabajado con más carga y más control. || Today you worked with more load and more control.
+Hoy has trabajado con más carga, más control y nuevos accesorios. || Today you worked with more load, more control and new equipment.
 Fíjate en cómo se siente tu centro. || Notice how your center feels.
+Y en cómo está tu espalda. || And how your back feels.
 Gracias por tu práctica. || Thank you for your practice.
 Nos vemos en la próxima clase. || See you in the next class.`}
 ];
@@ -761,176 +917,283 @@ const ADVANCED_STAGES = [
 yt:"advanced reformer pilates class",
 how:{en:["Keep the intro short: advanced students should arrive warmed up and know the set-up.","Remind them that control matters more than range, even at this level.","Check in about injuries before you start: short spine, teaser and front split all need a healthy spine, shoulders and hips."],
 es:["Introducción corta: el alumnado avanzado llega ya activado y conoce la colocación.","Recuerda que el control importa más que el recorrido, también en este nivel.","Pregunta por lesiones antes de empezar: short spine, teaser y front split necesitan columna, hombros y caderas sanos."]},
-s:`Bienvenidos a la clase avanzada. || Welcome to the advanced class.
-Hoy trabajamos con fluidez: pocas pausas y transiciones rápidas. || Today we work with flow: few pauses and quick transitions.
-Túmbate boca arriba, con los talones en la barra al ancho de las caderas. || Lie on your back, heels on the bar, hip-width apart.
-Inhala y abre las costillas. || Inhale and open your ribs.
-Exhala y conecta el centro. || Exhale and connect your center.
+s:`## Preparación || Set-up
+Bienvenidos a la clase avanzada. || Welcome to the advanced class.
+Hoy vamos a trabajar con fluidez: pocas pausas y transiciones rápidas. || Today we'll work with flow: few pauses and quick transitions.
+Si tienes alguna lesión, avísame antes de empezar. || If you have any injury, let me know before we start.
+Ajusta los muelles a una resistencia pesada. || Set the springs to a heavy resistance.
+Túmbate boca arriba, con la cabeza en el reposacabezas. || Lie on your back, head on the headrest.
+Talones en la barra, separados al ancho de las caderas. || Heels on the bar, hip-width apart.
+Brazos largos a los lados, palmas hacia abajo. || Arms long by your sides, palms down.
+## Respiración || Breathing
+Inhala y abre las costillas hacia los lados. || Inhale and widen your ribs to the sides.
+Exhala, cierra las costillas y conecta el centro. || Exhale, close your ribs and connect your center.
 * 3 respiraciones. || 3 breaths.
-Mantén esa conexión durante toda la clase. || Keep that connection for the whole class.`},
+Mantén esta conexión durante toda la clase, también en las transiciones. || Keep this connection for the whole class, including the transitions.
+Recuerda: el control es más importante que el recorrido. || Remember: control matters more than range.`},
 
 {t:{es:"Footwork",en:"Footwork"}, sub:{es:"Continuo, a una pierna y running",en:"Continuous, single leg and running"}, min:6, demos:["footwork"],
 yt:"advanced reformer footwork single leg",
 how:{en:["Springs (typical): heavy, e.g. 3–4 springs; single leg with one spring less.","Advanced footwork is rhythm without losing alignment: no pause at either end.","Single leg with the free leg to the ceiling challenges pelvic stability: hips stay level.","Running: quick feet, quiet pelvis."],
 es:["Muelles (habitual): pesados, p. ej. 3–4 muelles; a una pierna, un muelle menos.","El footwork avanzado es ritmo sin perder la alineación: sin pausa en los extremos.","A una pierna con la otra al techo se desafía la estabilidad de la pelvis: caderas niveladas.","Running: pies rápidos, pelvis tranquila."]},
-s:`## Footwork continuo || Continuous footwork
-Talones en paralelo. Exhala, empuja. Inhala, vuelve. || Heels in parallel. Exhale, push. Inhale, return.
+s:`## Talones en paralelo || Parallel heels
+Talones en la barra, en paralelo, con los pies flexionados. || Heels on the bar, in parallel, feet flexed.
+Inhala para preparar. || Inhale to prepare.
+Exhala y empuja hasta estirar las piernas, sin bloquear las rodillas. || Exhale and push until your legs are straight, without locking your knees.
+Inhala y vuelve, sin pausa en ningún extremo. || Inhale and come back, without pausing at either end.
 * 10 repeticiones. || 10 reps.
-Puntas en V, talones altos. || Toes in a V, heels high.
+Movimiento continuo, como un pistón. || Continuous movement, like a piston.
+## Puntas en V || Toes in V
+Ahora puntas en V: talones juntos y altos. || Now toes in a V: heels together and high.
+Rodillas abiertas en la dirección de los dedos. || Knees open in the direction of your toes.
+Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
 * 10 repeticiones. || 10 reps.
-Segunda abierta, talones en la barra. || Wide second, heels on the bar.
+Los talones no bajan en ningún momento. || Your heels never drop.
+## Segunda abierta || Wide second
+Segunda abierta: pies hacia los extremos de la barra, talones apoyados. || Wide second: feet toward the ends of the bar, heels on.
+Rodillas hacia fuera, alineadas con los pies. || Knees out, in line with your feet.
+Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
 * 10 repeticiones. || 10 reps.
-Sin pausa en ningún extremo: movimiento continuo. || No pause at either end: continuous movement.
+La pelvis y las costillas no se mueven en ninguna posición. || Your pelvis and ribs don't move in any position.
 ## Una pierna || Single leg @singleleg
-Talón derecho en el centro de la barra, pierna izquierda hacia el techo. || Right heel in the center of the bar, left leg toward the ceiling.
+Quita un muelle. || Take one spring off.
+Coloca el talón derecho en el centro de la barra. || Place your right heel in the center of the bar.
+Estira la pierna izquierda hacia el techo. || Extend your left leg toward the ceiling.
+Exhala y empuja con la pierna derecha. || Exhale and push with your right leg.
+Inhala y vuelve. La pierna del techo no se mueve. || Inhale and come back. The leg to the ceiling doesn't move.
+* 8 por lado. || 8 per side.
+Ahora con la punta del pie: talón alto. || Now on the ball of the foot: heel high.
 Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
 * 8 por lado. || 8 per side.
-Ahora con la punta del pie, talón alto. || Now on the ball of the foot, heel high.
-* 8 por lado. || 8 per side.
+Cambia de pierna y repite las dos versiones. || Switch legs and repeat both versions.
+Las dos caderas pesan igual sobre el carro. || Both hips weigh the same on the carriage.
 ## Running || Running @running
-Piernas estiradas, puntas de los pies en la barra. || Legs straight, balls of the feet on the bar.
-Baja un talón mientras doblas la otra rodilla, y alterna. || Lower one heel as you bend the other knee, and alternate.
-Más rápido, pero con control. || Faster, but with control.
+Vuelve a poner los muelles pesados. || Put the heavy springs back on.
+Las dos puntas de los pies en la barra. Empuja y estira las piernas. || Both balls of the feet on the bar. Push out and straighten your legs.
+Baja el talón derecho por debajo de la barra mientras doblas la rodilla izquierda. || Lower your right heel under the bar as you bend your left knee.
+Cambia, y sigue alternando. || Switch, and keep alternating.
+Cada vez un poco más rápido, pero con control. || A little faster each time, but with control.
 * 20 por lado. || 20 per side.
+Pies rápidos, pelvis tranquila. || Quick feet, quiet pelvis.
+Termina con las dos piernas estiradas. || Finish with both legs straight.
 Dobla las rodillas y vuelve a casa sin golpear. || Bend your knees and come home without banging.`},
 
 {t:{es:"Hundred",en:"Hundred"}, sub:{es:"Con correas y piernas en diagonal baja",en:"With straps and legs on a low diagonal"}, min:3, demos:["hundredext"],
 yt:"reformer pilates hundred straps legs extended",
 how:{en:["Springs (typical): light–medium, e.g. 1–2 springs.","Legs only as low as the low back stays still; raise them the moment it lifts.","Long neck, eyes on the navel. Head down is still allowed.","Arms pump from the shoulders with constant tension in the straps."],
 es:["Muelles (habitual): ligeros–medios, p. ej. 1–2 muelles.","Las piernas, solo tan bajas como la zona lumbar se mantenga quieta; súbelas en cuanto se levante.","Cuello largo, mirada al ombligo. Bajar la cabeza sigue siendo una opción.","Los brazos bombean desde los hombros, con tensión constante en las correas."]},
-s:`Coge las correas y lleva las piernas a mesa. || Take the straps and bring your legs into tabletop.
-Brazos hacia el techo. || Arms toward the ceiling.
-Exhala: baja los brazos, eleva la cabeza y estira las piernas en diagonal baja. || Exhale: press your arms down, lift your head and extend your legs to a low diagonal.
-Bombea los brazos. || Pump your arms.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia ligera o media. || Set the springs to a light or medium resistance.
+Alarga los brazos por encima de la cabeza y coge las correas, una en cada mano. || Reach overhead and take the straps, one in each hand.
+Lleva los brazos hacia el techo, sobre los hombros. || Bring your arms up toward the ceiling, over your shoulders.
+Lleva las piernas a mesa. || Bring your legs into tabletop.
+## Hundred || Hundred
+Inhala para preparar. || Inhale to prepare.
+Exhala: baja los brazos junto a las caderas, eleva la cabeza y los hombros y estira las piernas en diagonal baja. || Exhale: press your arms down by your hips, lift your head and shoulders, and extend your legs to a low diagonal.
+Todo a la vez, en una sola exhalación. || All at once, in one exhale.
+Bombea los brazos: pequeño, rápido y con fuerza. || Pump your arms: small, quick and strong.
 Inhala: dos, tres, cuatro, cinco. || Inhale: two, three, four, five.
 Exhala: dos, tres, cuatro, cinco. || Exhale: two, three, four, five.
+Inhala... || Inhale...
+Exhala... || Exhale...
+Las piernas, solo tan bajas como tu zona lumbar se mantenga quieta. || Your legs only as low as your low back stays still.
+Si la espalda se levanta, sube las piernas. || If your back lifts, raise your legs.
 * 10 series de respiración. || 10 breath cycles.
-Las piernas, solo tan bajas como tu espalda permita. || Your legs only as low as your back allows.
-Última serie. || Last cycle.
-Dobla las rodillas, baja la cabeza y suelta las correas. || Bend your knees, lower your head and release the straps.`},
+Últimas dos series. || Last two cycles.
+Última. || Last one.
+## Salir || Coming out
+Dobla las rodillas a mesa y lleva los brazos al techo. || Bend your knees to tabletop and bring your arms to the ceiling.
+Baja la cabeza. || Lower your head.
+Deja las correas en las manos: ahora las pasamos a los pies. || Keep the straps in your hands: next we move them to your feet.`},
 
 {t:{es:"Short spine",en:"Short spine"}, sub:{es:"Articulación de la columna con los pies en correas",en:"Spinal articulation with feet in straps"}, min:5, demos:["shortspine"],
 yt:"reformer pilates short spine",
 how:{en:["Springs (typical): medium, e.g. 2 springs.","Not for students with osteoporosis, disc problems or neck issues: give them frog or leg circles instead.","Weight on the shoulder blades, never the neck. Keep the head still and the arms pressing down.","The roll-down is the exercise: articulate slowly, knees stay bent until the tailbone lands."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles.","No es para personas con osteoporosis, problemas de disco o de cuello: ofréceles rana o círculos de piernas.","El peso en las escápulas, nunca en el cuello. Cabeza quieta y brazos presionando hacia abajo.","El ejercicio es la bajada: articula despacio, con las rodillas dobladas hasta que apoye el coxis."]},
 s:`## Preparación || Set-up
-Coloca las correas en los arcos de los pies. || Place the straps around the arches of your feet.
-Piernas largas en diagonal, brazos largos presionando el carro. || Legs long on a diagonal, arms long pressing into the carriage.
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Dobla las rodillas hacia el pecho. || Bend your knees in toward your chest.
+Pasa las correas a los arcos de los pies, primero una y después la otra. || Move the straps to the arches of your feet, one and then the other.
+Estira las piernas en diagonal. || Extend your legs on a diagonal.
+Brazos largos a los lados, presionando el carro. || Arms long by your sides, pressing into the carriage.
+Si tienes problemas de cuello, de disco u osteoporosis, haz rana en lugar de este ejercicio. || If you have neck, disc or osteoporosis issues, do frog instead of this exercise.
 ## Short spine || Short spine
-Inhala y lleva las piernas hacia el techo. || Inhale and bring your legs up toward the ceiling.
-Exhala y rueda las caderas hacia arriba: piernas por encima de la cabeza, paralelas al suelo. || Exhale and roll your hips up: legs over your head, parallel to the floor.
-El peso queda en las escápulas, nunca en el cuello. || Your weight stays on your shoulder blades, never on your neck.
+Inhala y lleva las piernas hacia el techo, juntas y estiradas. || Inhale and bring your legs up toward the ceiling, together and straight.
+Exhala y usa el abdomen para rodar las caderas hacia arriba. || Exhale and use your abs to roll your hips up.
+Las piernas pasan por encima de la cabeza, paralelas al suelo. || Your legs go over your head, parallel to the floor.
+El peso está en las escápulas, nunca en el cuello. || Your weight is on your shoulder blades, never on your neck.
+La cabeza se queda quieta y los brazos presionan el carro. || Your head stays still and your arms press into the carriage.
 Inhala y dobla las rodillas hacia los hombros. || Inhale and bend your knees toward your shoulders.
-Exhala y baja la columna vértebra por vértebra, con las rodillas dobladas. || Exhale and roll down one vertebra at a time, knees bent.
+Exhala y empieza a bajar la columna, vértebra por vértebra. || Exhale and start rolling your spine down, one vertebra at a time.
+Las rodillas se quedan dobladas mientras bajas. || Your knees stay bent as you roll down.
+Siente cómo cada vértebra toca el carro. || Feel each vertebra touch the carriage.
 Cuando el coxis llegue al carro, estira las piernas en diagonal. || When your tailbone reaches the carriage, extend your legs on a diagonal.
+Esa es una repetición. || That's one rep.
 * 5 repeticiones. || 5 reps.
-Lento y controlado: el carro no debe golpear. || Slow and controlled: the carriage shouldn't bang.
-Al terminar, dobla las rodillas y saca las correas. || When you finish, bend your knees and take the straps off.`},
+Lento y controlado: el carro no debe golpear al volver. || Slow and controlled: the carriage shouldn't bang as it comes back.
+La bajada es el ejercicio: tómate tu tiempo. || The roll-down is the exercise: take your time.
+Última repetición. || Last rep.
+## Salir || Coming out
+Dobla las rodillas hacia el pecho. || Bend your knees in toward your chest.
+Saca las correas de los pies y vuelve a cogerlas con las manos. || Take the straps off your feet and hold them in your hands again.`},
 
 {t:{es:"Coordinación",en:"Coordination"}, sub:{es:"Brazos y piernas a la vez, con correas",en:"Arms and legs together, with straps"}, min:4, demos:["coordstraps"],
 yt:"reformer pilates coordination exercise",
 how:{en:["Springs (typical): medium, e.g. 2 springs.","The challenge is holding the curl and the arms still while the legs move.","Cue the order clearly: curl and extend together, open-close, knees, then arms and head.","If the neck tires, keep the head down and do the arm and leg pattern only."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles.","La dificultad está en mantener la flexión y los brazos quietos mientras se mueven las piernas.","Marca el orden con claridad: flexión y extensión a la vez, abrir-cerrar, rodillas, y después brazos y cabeza.","Si se cansa el cuello, cabeza abajo y solo el patrón de brazos y piernas."]},
 s:`## Preparación || Set-up
-Túmbate con una correa en cada mano. || Lie down with a strap in each hand.
-Codos doblados a 90 grados, junto a las costillas. || Elbows bent at 90 degrees, beside your ribs.
-Piernas en mesa. || Legs in tabletop.
+Mantén los muelles medios. || Keep the medium springs.
+Con una correa en cada mano, dobla los codos a 90 grados. || With a strap in each hand, bend your elbows to 90 degrees.
+Los codos se apoyan junto a las costillas y las manos miran al techo. || Your elbows rest beside your ribs and your hands point to the ceiling.
+Lleva las piernas a mesa. || Bring your legs into tabletop.
 ## Coordinación || Coordination
-Exhala: eleva la cabeza, estira los brazos junto a las caderas y las piernas en diagonal. || Exhale: lift your head, straighten your arms by your hips and your legs on a diagonal.
-Inhala: abre y cierra las piernas. || Inhale: open and close your legs.
-Exhala: dobla las rodillas a mesa. || Exhale: bend your knees back to tabletop.
-Inhala: dobla los codos y baja la cabeza. || Inhale: bend your elbows and lower your head.
+Vamos a aprender la secuencia en cuatro tiempos. || Let's learn the sequence in four counts.
+Uno. Exhala: eleva la cabeza y los hombros, estira los brazos junto a las caderas y estira las piernas en diagonal. || One. Exhale: lift your head and shoulders, straighten your arms beside your hips and extend your legs on a diagonal.
+Dos. Inhala: abre las piernas... y ciérralas. || Two. Inhale: open your legs... and close them.
+Tres. Exhala: dobla las rodillas a mesa. || Three. Exhale: bend your knees back to tabletop.
+Cuatro. Inhala: dobla los codos y baja la cabeza. || Four. Inhale: bend your elbows and lower your head.
+Otra vez: estira... abre y cierra... rodillas... codos y cabeza. || Again: extend... open and close... knees... elbows and head.
 * 6 repeticiones. || 6 reps.
-El tronco no se mueve mientras las piernas abren y cierran. || Your torso stays still while your legs open and close.`},
+El tronco y los brazos se quedan quietos mientras las piernas abren y cierran. || Your torso and arms stay still while your legs open and close.
+Si se te cansa el cuello, deja la cabeza abajo y haz solo los brazos y las piernas. || If your neck tires, keep your head down and do just the arms and legs.
+Deja las correas en su sitio y siéntate con cuidado. || Put the straps back and sit up carefully.`},
 
 {t:{es:"Long box: swan y correas",en:"Long box: swan and straps"}, sub:{es:"Extensión de espalda boca abajo",en:"Face-down back extension"}, min:6, demos:["swan"],
 yt:"reformer pilates long box swan pulling straps",
 how:{en:["Springs (typical): light, e.g. 1 spring for both.","Swan: the extension spreads evenly along the spine; no hinging at the low back.","Box position: for swan the student faces the bar; for pulling straps they turn to face the straps.","Skip swan for anyone who can't extend comfortably; keep pulling straps."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle para los dos.","Swan: la extensión se reparte por toda la columna; sin doblarse en la zona lumbar.","Posición en el cajón: en swan se mira hacia la barra; en tirar de las correas, hacia las correas.","Si alguien no puede hacer la extensión con comodidad, sáltate swan y quédate con las correas."]},
-s:`## Swan || Swan
-Coloca el cajón largo sobre el carro, contra los apoyos de hombros. || Place the long box on the carriage, against the shoulder rests.
-Túmbate boca abajo mirando hacia la barra, con las caderas sobre el cajón. || Lie face down facing the bar, hips on the box.
-Manos en la barra, a la anchura de los hombros. || Hands on the bar, shoulder-width apart.
-Inhala, empuja la barra y eleva el pecho en extensión. || Inhale, push the bar away and lift your chest into extension.
-Exhala y vuelve, alargando la columna. || Exhale and come back, lengthening your spine.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Coloca el cajón largo a lo largo del carro, contra los apoyos de hombros. || Place the long box lengthwise on the carriage, against the shoulder rests.
+## Swan || Swan
+Túmbate boca abajo sobre el cajón, mirando hacia la barra. || Lie face down on the box, facing the bar.
+Las caderas apoyadas en el cajón y las piernas largas detrás de ti. || Hips on the box and legs long behind you.
+Coloca las manos sobre la barra, a la anchura de los hombros, con los codos doblados. || Place your hands on the bar, shoulder-width apart, elbows bent.
+Activa el abdomen y alarga las piernas. || Engage your abs and lengthen your legs.
+Inhala, empuja la barra y estira los brazos. || Inhale, push the bar and straighten your arms.
+Al mismo tiempo, eleva el pecho en extensión, mirando al frente. || At the same time, lift your chest into extension, looking ahead.
+Exhala y dobla los brazos, bajando el pecho y alargando la columna. || Exhale and bend your arms, lowering your chest and lengthening your spine.
 * 5 repeticiones. || 5 reps.
-Piernas largas, glúteos suaves, cuello en línea con la columna. || Legs long, glutes soft, neck in line with your spine.
+La extensión se reparte por toda la espalda, no solo en la zona lumbar. || The extension spreads along your whole back, not just your low back.
+Glúteos suaves, piernas largas. || Glutes soft, legs long.
 ## Tirar de las correas || Pulling straps @pullstraps
-Date la vuelta en el cajón: el pecho en el extremo más cercano a las correas. || Turn around on the box: chest at the end nearest the straps.
-Coge las correas, con los brazos largos delante. || Take the straps, arms long in front.
-Exhala, tira hacia las caderas y eleva el pecho. || Exhale, pull down to your hips and lift your chest.
-Inhala y vuelve. || Inhale and return.
+Bájate del cajón y túmbate al revés: ahora la cabeza va hacia las correas. || Come off the box and lie the other way: now your head goes toward the straps.
+El pecho queda justo en el borde del cajón. || Your chest is right at the edge of the box.
+Coge las correas por las cuerdas, con los brazos largos hacia delante y hacia abajo. || Hold the straps by the ropes, arms long, forward and down.
+Exhala: baja las escápulas y tira de los brazos rectos hacia las caderas, elevando el pecho. || Exhale: draw your shoulder blades down and pull your straight arms toward your hips, lifting your chest.
+Inhala y vuelve despacio. || Inhale and return slowly.
 * 6 repeticiones. || 6 reps.
-Ahora en T: brazos abiertos hacia los lados. || Now in a T: arms open to the sides.
-Exhala y lleva los brazos a las caderas. Inhala y vuelve. || Exhale and sweep your arms to your hips. Inhale and return.
-* 6 repeticiones. || 6 reps.`},
+## Brazos en T || T-pull @pullstraps
+Ahora abre los brazos hacia los lados, en T. || Now open your arms out to the sides, in a T.
+Exhala y lleva los brazos hacia las caderas, juntando las escápulas. || Exhale and sweep your arms to your hips, drawing your shoulder blades together.
+Inhala y vuelve a la T. || Inhale and return to the T.
+* 6 repeticiones. || 6 reps.
+El cuello sigue la línea de la columna: no mires hacia arriba. || Your neck follows the line of your spine: don't look up.
+Suelta las correas, bájate del cajón y gíralo a lo ancho para el short box. || Release the straps, come off the box and turn it crosswise for short box.`},
 
 {t:{es:"Short box avanzado",en:"Advanced short box"}, sub:{es:"Redonda, plana, torsión con alcance e inclinación lateral",en:"Round, flat, twist and reach, side bend"}, min:6, demos:["shortbox"],
 yt:"reformer short box twist and reach side over",
 how:{en:["Springs: medium so the carriage stays still. Check the foot strap before anyone leans back.","Twist and reach combines rotation and hinge: hips square, spine long, abs on.","Side bend: lengthen up before going over; don't collapse into the bottom side.","Stop the series if a student's abdomen domes or the low back grips."],
 es:["Muelles: medios para que el carro no se mueva. Comprueba la correa de pies antes de inclinarse hacia atrás.","Torsión con alcance combina rotación e inclinación: caderas cuadradas, columna larga, abdomen activo.","Inclinación lateral: crece antes de inclinarte; no te hundas sobre el lado de abajo.","Para la serie si el abdomen se abomba o la zona lumbar se agarra."]},
 s:`## Preparación || Set-up
-Cajón corto a lo ancho del carro, contra los apoyos de hombros. || Short box across the carriage, against the shoulder rests.
-Siéntate en el centro, con los pies flexionados bajo la correa de pies. || Sit in the middle, feet flexed under the foot strap.
+Coloca el cajón corto a lo ancho del carro, contra los apoyos de hombros. || Place the short box across the carriage, against the shoulder rests.
+Pon un muelle medio para que el carro no se mueva. || Use a medium spring so the carriage doesn't move.
+Comprueba que la correa de pies está bien sujeta. || Check that the foot strap is secure.
+Siéntate en el centro del cajón y mete los pies bajo la correa, flexionados. || Sit in the middle of the box and slide your feet under the strap, flexed.
+Siéntate alto, encima de los isquiones. || Sit tall, on top of your sit bones.
 ## Espalda redonda || Round back
-Brazos cruzados. Exhala y redondea hacia atrás. || Arms crossed. Exhale and round back.
-Inhala y quédate. Exhala y vuelve. || Inhale and stay. Exhale and come back.
+Cruza los brazos a la altura del pecho. || Cross your arms at chest height.
+Inhala y crece. || Inhale and grow tall.
+Exhala, bascula la pelvis y redondea hacia atrás. || Exhale, tuck your pelvis and round back.
+Inhala y quédate. || Inhale and stay.
+Exhala y vuelve, redondeando hacia delante. || Exhale and come back, rounding forward.
 * 5 repeticiones. || 5 reps.
 ## Espalda plana || Flat back @flatback
-Brazos arriba. Inclínate hacia atrás con la espalda recta. || Arms up. Hinge back with a straight back.
-Inhala abajo; exhala y vuelve. || Inhale at the bottom; exhale and come back.
+Brazos arriba, junto a las orejas. || Arms up, beside your ears.
+Exhala e inclínate hacia atrás desde las caderas, con la espalda recta. || Exhale and hinge back from your hips with a straight back.
+Inhala abajo. || Inhale down there.
+Exhala y vuelve arriba. || Exhale and come back up.
 * 5 repeticiones. || 5 reps.
 ## Torsión con alcance || Twist and reach @flatback
-Brazos en T. Gira hacia la derecha. || Arms in a T. Twist to the right.
-En esa torsión, inclínate hacia atrás con la espalda recta. || Holding the twist, hinge back with a straight back.
-Vuelve arriba y gira al centro. Ahora hacia la izquierda. || Come back up and return to center. Now to the left.
+Abre los brazos en T. || Open your arms in a T.
+Inhala y gira el pecho hacia la derecha. || Inhale and turn your chest to the right.
+Exhala y, manteniendo el giro, inclínate hacia atrás con la espalda recta. || Exhale and, keeping the twist, hinge back with a straight back.
+Inhala y vuelve arriba, todavía en el giro. || Inhale and come back up, still in the twist.
+Exhala y vuelve al centro. || Exhale and return to center.
+Ahora hacia la izquierda: gira, inclínate atrás, sube y al centro. || Now to the left: twist, hinge back, come up and back to center.
 * 3 por lado. || 3 per side.
+Las caderas miran siempre hacia la barra. || Your hips always face the bar.
 ## Inclinación lateral || Side bend @shortbox
-Manos detrás de la cabeza. || Hands behind your head.
-Inclínate hacia la derecha, alargando la cintura. || Bend to the right, lengthening your waist.
-Vuelve al centro. Ahora hacia la izquierda. || Back to center. Now to the left.
+Manos detrás de la cabeza, codos abiertos. || Hands behind your head, elbows wide.
+Inhala y crece hacia arriba. || Inhale and grow tall.
+Exhala e inclínate hacia la derecha, alargando la cintura izquierda. || Exhale and bend to the right, lengthening your left waist.
+Inhala y vuelve al centro. || Inhale and come back to center.
+Exhala e inclínate hacia la izquierda. || Exhale and bend to the left.
 * 3 por lado. || 3 per side.
-Las dos caderas firmes sobre el cajón. || Both hips stay grounded on the box.`},
+Las dos caderas se quedan firmes sobre el cajón. || Both hips stay grounded on the box.
+Saca los pies de la correa y retira el cajón. || Take your feet out of the strap and remove the box.`},
 
 {t:{es:"Serie de long stretch",en:"Long stretch series"}, sub:{es:"Fluida, con elephant a una pierna",en:"Flowing, with single-leg elephant"}, min:6, demos:["longstretch"],
 yt:"reformer long stretch series single leg elephant",
 how:{en:["Springs (typical): light–medium, e.g. 1–2 springs.","Flow from one exercise to the next without stepping off: the transitions are part of the work.","Single-leg elephant: the lifted leg stays in line with the spine; don't let the hip open.","If shoulders or wrists tire, go back to two-leg elephant."],
 es:["Muelles (habitual): ligeros–medios, p. ej. 1–2 muelles.","Pasa de un ejercicio a otro sin bajarte: las transiciones también son trabajo.","Elephant a una pierna: la pierna elevada sigue la línea de la espalda; que la cadera no se abra.","Si se cansan los hombros o las muñecas, vuelve a elephant con las dos piernas."]},
-s:`## Long stretch || Long stretch
-Plancha: manos en la barra, puntas de los pies contra los apoyos de hombros. || Plank: hands on the bar, balls of your feet against the shoulder rests.
-Inhala, carro atrás. Exhala, vuelve. || Inhale, carriage back. Exhale, return.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia ligera o media. || Set the springs to a light or medium resistance.
+Manos en la barra, a la anchura de los hombros. || Hands on the bar, shoulder-width apart.
+Pisa el carro y apoya las puntas de los pies contra los apoyos de hombros. || Step onto the carriage and put the balls of your feet against the shoulder rests.
+## Long stretch || Long stretch
+Estira las piernas y forma una plancha: una línea de la cabeza a los talones. || Straighten your legs into a plank: one line from your head to your heels.
+Inhala y empuja el carro hacia atrás. || Inhale and push the carriage back.
+Exhala y vuelve, con los hombros sobre las muñecas. || Exhale and come back, shoulders over your wrists.
 * 6 repeticiones. || 6 reps.
+Todo el cuerpo se mueve como una sola pieza. || Your whole body moves as one piece.
 ## Down stretch || Down stretch @downstretch
-Rodillas al carro, pecho abierto. || Knees to the carriage, chest open.
-Inhala, carro atrás. Exhala, vuelve. || Inhale, carriage back. Exhale, return.
+Sin bajarte, apoya las rodillas en el carro. || Without stepping off, lower your knees onto the carriage.
+Caderas hacia delante y pecho abierto, en una extensión suave. || Hips forward and chest open, in a gentle extension.
+Inhala y empuja el carro hacia atrás con los brazos. || Inhale and push the carriage back with your arms.
+Exhala y vuelve, llevando el carro con el abdomen. || Exhale and come back, drawing the carriage in with your abs.
 * 5 repeticiones. || 5 reps.
 ## Up stretch || Up stretch @upstretch
-Caderas al techo. Inhala y baja a plancha llevando el carro atrás. || Hips to the ceiling. Inhale and lower to plank as the carriage goes back.
-Exhala, sube las caderas y vuelve. || Exhale, lift your hips and come back.
+Vuelve a la plancha y sube las caderas hacia el techo. || Come back to plank and lift your hips toward the ceiling.
+Inhala y empuja el carro hacia atrás, bajando hasta la plancha. || Inhale and push the carriage back, lowering into plank.
+Exhala y vuelve, subiendo las caderas otra vez. || Exhale and come back, lifting your hips again.
 * 5 repeticiones. || 5 reps.
 ## Elephant a una pierna || Single-leg elephant @elephant
-Elephant: caderas altas, talones apoyados contra los apoyos de hombros. || Elephant: hips high, heels down against the shoulder rests.
-Eleva la pierna derecha hacia atrás, en línea con la espalda. || Lift your right leg back, in line with your back.
-Exhala, carro atrás con la pierna de apoyo. Inhala, vuelve. || Exhale, carriage back with the standing leg. Inhale, return.
+Con las caderas altas, baja los talones al carro, contra los apoyos de hombros. || With your hips high, lower your heels onto the carriage, against the shoulder rests.
+Ahora eleva la pierna derecha hacia atrás, en línea con la espalda. || Now lift your right leg back, in line with your back.
+Exhala y empuja el carro hacia atrás con la pierna de apoyo. || Exhale and push the carriage back with your standing leg.
+Inhala y vuelve. || Inhale and return.
 * 5 por lado. || 5 per side.
-Las caderas se quedan cuadradas. || Your hips stay square.
-Vuelve a casa y bájate de la máquina con cuidado. || Come home and step off carefully.`},
+Las caderas se quedan cuadradas: la pierna elevada no se abre hacia un lado. || Your hips stay square: the lifted leg doesn't open out to the side.
+Cambia de pierna. || Switch legs.
+Si los hombros se cansan, vuelve a elephant con las dos piernas. || If your shoulders get tired, go back to elephant on both legs.
+Vuelve a casa y baja al suelo con cuidado. || Come home and step down to the floor carefully.`},
 
 {t:{es:"Knee stretch completo",en:"Full knee stretch"}, sub:{es:"Redonda, plana y rodillas despegadas",en:"Round, flat and knees off"}, min:4, demos:["kneestretch"],
 yt:"reformer knee stretch knees off",
 how:{en:["Springs (typical): medium, e.g. 2 springs.","Knees off is very demanding on the abs and shoulders: offer it only once round and flat back are solid.","Shoulders stay over the wrists in all three versions.","Keep the range small in knees off; speed comes from the legs, not momentum."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles.","Rodillas despegadas exige mucho al abdomen y los hombros: ofrécelo solo si espalda redonda y plana están sólidas.","Hombros sobre las muñecas en las tres versiones.","Recorrido pequeño con las rodillas despegadas; la velocidad sale de las piernas, no del impulso."]},
-s:`## Espalda redonda || Round back
-Arrodíllate, con los pies contra los apoyos de hombros y las manos en la barra. || Kneel, feet against the shoulder rests, hands on the bar.
-Espalda redonda. Exhala, carro atrás. Inhala, vuelve. || Round back. Exhale, carriage back. Inhale, return.
+s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Arrodíllate en el carro, con los pies contra los apoyos de hombros. || Kneel on the carriage, feet against the shoulder rests.
+Manos en la barra, con los hombros sobre las muñecas. || Hands on the bar, shoulders over your wrists.
+## Espalda redonda || Round back
+Redondea la espalda y mira hacia las rodillas. || Round your back and look toward your knees.
+Exhala, empuja el carro hacia atrás. Inhala, vuelve. || Exhale, push the carriage back. Inhale, return.
 * 10 repeticiones. || 10 reps.
+La espalda no cambia de forma: solo se mueven las piernas. || Your back doesn't change shape: only your legs move.
 ## Espalda plana || Flat back
-Espalda plana, pecho hacia delante. || Flat back, chest forward.
+Ahora alarga la espalda: plana, con el pecho hacia delante. || Now lengthen your back: flat, chest forward.
+Exhala, empuja. Inhala, vuelve. || Exhale, push. Inhale, return.
 * 10 repeticiones. || 10 reps.
+Que la zona lumbar no se hunda. || Don't let your low back sag.
 ## Rodillas despegadas || Knees off @kneesoff
-Redondea la espalda y despega las rodillas unos centímetros del carro. || Round your back and lift your knees a few centimeters off the carriage.
+Vuelve a redondear la espalda. || Round your back again.
+Mete los dedos de los pies y despega las rodillas unos centímetros del carro. || Tuck your toes under and lift your knees a few centimetres off the carriage.
 Pequeño y rápido: carro atrás, carro adelante. || Small and quick: carriage back, carriage in.
 * 10 repeticiones. || 10 reps.
+El abdomen sostiene; los hombros no se mueven. || Your abs hold you; your shoulders don't move.
+Últimas tres. Tres... dos... uno. || Last three. Three... two... one.
 Baja las rodillas, vuelve a casa y siéntate sobre los talones. || Lower your knees, come home and sit back on your heels.`},
 
 {t:{es:"Teaser",en:"Teaser"}, sub:{es:"Con correas en las manos",en:"With straps in the hands"}, min:4, demos:["teaser"],
@@ -938,48 +1201,71 @@ yt:"reformer teaser with straps",
 how:{en:["Springs (typical): light, e.g. 1 spring; the straps help the roll-up.","Modification: knees bent in tabletop, or one foot on the bar.","The legs stay still while the spine rolls up and down: no swinging.","Not for students with osteoporosis or acute low-back pain."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle; las correas ayudan a subir.","Modificación: rodillas dobladas en mesa, o un pie en la barra.","Las piernas se quedan quietas mientras la columna sube y baja: sin balanceo.","No es para personas con osteoporosis o dolor lumbar agudo."]},
 s:`## Preparación || Set-up
-Túmbate con una correa en cada mano, brazos largos a los lados. || Lie down with a strap in each hand, arms long by your sides.
-Piernas juntas, estiradas en diagonal. || Legs together, extended on a diagonal.
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Túmbate boca arriba y coge una correa en cada mano, con los brazos largos a los lados. || Lie on your back and take a strap in each hand, arms long by your sides.
+Junta las piernas y estíralas en diagonal hacia arriba. || Bring your legs together and extend them upward on a diagonal.
+Si tu espalda lo necesita, dobla las rodillas en mesa. || If your back needs it, bend your knees into tabletop.
 ## Teaser || Teaser
-Inhala y lleva los brazos hacia el techo. || Inhale and bring your arms toward the ceiling.
-Exhala y rueda hacia arriba hasta la V: brazos paralelos a las piernas. || Exhale and roll up into a V: arms parallel to your legs.
-Equilibrio justo detrás de los isquiones. || Balance just behind your sit bones.
+Inhala y lleva los brazos hacia el techo. || Inhale and bring your arms up toward the ceiling.
+Exhala: barbilla hacia el pecho y rueda hacia arriba, vértebra por vértebra. || Exhale: chin toward your chest and roll up, one vertebra at a time.
+Llega a la V: los brazos paralelos a las piernas. || Arrive in the V: arms parallel to your legs.
+El equilibrio está justo detrás de los isquiones. || Your balance is just behind your sit bones.
 Inhala, quédate y crece. || Inhale, stay and grow tall.
-Exhala y rueda hacia abajo vértebra por vértebra, con las piernas quietas. || Exhale and roll down one vertebra at a time, legs still.
+Exhala y rueda hacia abajo, vértebra por vértebra. || Exhale and roll down, one vertebra at a time.
+Las piernas se quedan quietas mientras bajas. || Your legs stay still as you roll down.
 * 4 repeticiones. || 4 reps.
+Sin impulso: el abdomen hace el trabajo. || No momentum: your abs do the work.
 Si la espalda se arquea, dobla las rodillas. || If your back arches, bend your knees.
-Dobla las rodillas y suelta las correas. || Bend your knees and release the straps.`},
+Última. || Last one.
+## Salir || Coming out
+Dobla las rodillas al pecho y suelta las correas con cuidado. || Bend your knees to your chest and release the straps carefully.
+Rueda hacia un lado y siéntate despacio. || Roll to one side and sit up slowly.`},
 
 {t:{es:"Front split",en:"Front split"}, sub:{es:"De pie: zancada sobre el carro",en:"Standing: lunge on the carriage"}, min:4, demos:["frontsplit"],
 yt:"reformer pilates front split",
 how:{en:["Springs (typical): medium, e.g. 2 springs. Too light and the carriage slides away.","Step on with the platform foot first; never step onto a moving carriage.","The front knee stays over the ankle; the range comes from the back hip.","Offer a hand on the bar or a wall for balance."],
 es:["Muelles (habitual): medios, p. ej. 2 muelles. Si son demasiado ligeros, el carro se escapa.","Sube primero el pie de la plataforma; nunca pises un carro en movimiento.","La rodilla delantera se queda sobre el tobillo; el recorrido sale de la cadera de atrás.","Ofrece una mano en la barra o en la pared para el equilibrio."]},
 s:`## Preparación || Set-up
+Ajusta los muelles a una resistencia media. || Set the springs to a medium resistance.
+Ponte de pie junto a la máquina, a la altura de la barra. || Stand next to the machine, level with the bar.
 Coloca el pie derecho en la plataforma, junto a la barra. || Place your right foot on the standing platform, next to the bar.
-El pie izquierdo en el carro, contra el apoyo de hombros, con el talón levantado. || Left foot on the carriage against the shoulder rest, heel lifted.
+Con una mano en la barra, sube el pie izquierdo al carro. || With one hand on the bar, step your left foot onto the carriage.
+Apóyalo contra el apoyo de hombros, con el talón levantado. || Place it against the shoulder rest, heel lifted.
 Rodilla delantera sobre el tobillo, manos en las caderas. || Front knee over your ankle, hands on your hips.
-## Front split || Front split
-Exhala y lleva el carro hacia atrás con la pierna de atrás. || Exhale and slide the carriage back with your back leg.
-Baja las caderas sin inclinar el tronco. || Lower your hips without leaning your torso.
-Inhala y vuelve con control. || Inhale and come back with control.
-* 6 por lado. || 6 per side.
 Pelvis cuadrada hacia delante. || Pelvis square to the front.
-Bájate del carro con cuidado y cambia de pierna. || Step off the carriage carefully and switch legs.`},
+## Front split || Front split
+Inhala para preparar. || Inhale to prepare.
+Exhala y lleva el carro hacia atrás con la pierna de atrás. || Exhale and slide the carriage back with your back leg.
+Baja las caderas hacia el suelo, sin inclinar el tronco. || Lower your hips toward the floor, without leaning your torso.
+Inhala y vuelve con control, tirando del carro con la cadera de atrás. || Inhale and come back with control, drawing the carriage in with your back hip.
+* 6 por lado. || 6 per side.
+La rodilla delantera no pasa de la punta del pie. || Your front knee doesn't go past your toes.
+Si pierdes el equilibrio, pon una mano en la barra. || If you lose your balance, put a hand on the bar.
+## Cambiar de lado || Change sides
+Vuelve a casa y baja del carro con cuidado, primero el pie de atrás. || Come home and step off the carriage carefully, back foot first.
+Cambia de lado: pie izquierdo en la plataforma, pie derecho en el carro. || Switch sides: left foot on the platform, right foot on the carriage.
+Exhala, carro atrás. Inhala, vuelve. || Exhale, carriage back. Inhale, return.
+Bájate del carro con cuidado. || Step off the carriage carefully.`},
 
 {t:{es:"Mermaid y vuelta a la calma",en:"Mermaid & cool-down"}, sub:{es:"Estiramiento lateral, estiramiento final y respiración",en:"Side stretch, final stretch and breathing"}, min:5, demos:["mermaid"],
 yt:"reformer pilates mermaid cool down",
 how:{en:["Springs (typical): light, e.g. 1 spring for mermaid.","Give the cool-down its full time even if the class runs long: advanced students need it most.","Close with one clear takeaway about control."],
 es:["Muelles (habitual): ligeros, p. ej. 1 muelle para mermaid.","Dedica a la vuelta a la calma su tiempo completo aunque la clase se alargue: el alumnado avanzado es quien más lo necesita.","Cierra con una idea clara sobre el control."]},
 s:`## Mermaid || Mermaid
-Siéntate de lado, piernas en Z, y la mano más cercana sobre la barra. || Sit sideways, legs in a Z-sit, nearest hand on the bar.
-Exhala, empuja la barra y alarga hacia el lado. || Exhale, push the bar away and lengthen to the side.
-Inhala y quédate. Exhala y vuelve, con el brazo por encima. || Inhale and stay. Exhale and come back, arm reaching over.
+Ajusta los muelles a una resistencia ligera. || Set the springs to a light resistance.
+Siéntate de lado sobre el carro, con la barra a tu derecha y las piernas en Z. || Sit sideways on the carriage, bar on your right, legs in a Z-sit.
+La mano derecha sobre la barra, el brazo izquierdo hacia el techo. || Right hand on the bar, left arm toward the ceiling.
+Exhala, empuja la barra y alarga el cuerpo hacia la derecha. || Exhale, push the bar and lengthen your body to the right.
+Inhala y quédate, respirando hacia las costillas de arriba. || Inhale and stay, breathing into your top ribs.
+Exhala y vuelve al centro, llevando el brazo por encima de la cabeza. || Exhale and come back to center, reaching your arm over your head.
 * 3 por lado. || 3 per side.
+Cambia de lado y repite. || Change sides and repeat.
 ## Estiramiento || Stretch @fold
-Siéntate mirando hacia la barra, con las piernas largas. || Sit facing the bar, legs long.
-Exhala e inclínate hacia delante. || Exhale and fold forward.
-Respira. Cabeza pesada. || Breathe. Head heavy.
-Rueda hacia arriba despacio. || Roll up slowly.
+Siéntate mirando hacia la barra, con las piernas largas o cruzadas. || Sit facing the bar, legs long or crossed.
+Inhala y crece. || Inhale and grow tall.
+Exhala e inclínate hacia delante, despacio. || Exhale and fold forward, slowly.
+Respira. La cabeza pesa. || Breathe. Your head is heavy.
+Rueda hacia arriba despacio, vértebra por vértebra. || Roll up slowly, one vertebra at a time.
 ## Respiración final || Final breathing @breath
 Tres respiraciones profundas. || Three deep breaths.
 Inhala... y exhala. || Inhale... and exhale.
@@ -1297,8 +1583,8 @@ const langOf=v=>(v.lang||'').replace('_','-').toLowerCase();
    computer) only those are used, because the system voices listed there are often silent. */
 let gender=store.get('gender','f');
 const badVoices=new Set();
-const FEMALE=/female|samantha|karen|moira|tessa|victoria|fiona|veena|serena|allison|\bava\b|susan|zira|hazel|catherine|m[oó]nica|paulina|marisol|soledad|helena|laura|sabina|elvira|dalia|luciana|francisca|google us english|^google español$/i;
-const MALE=/\bmale\b|daniel|\balex\b|fred|rishi|oliver|arthur|aaron|\btom\b|david|\bmark\b|george|james|jorge|juan|diego|carlos|pablo|ra[uú]l|[aá]lvaro|enrique|jos[eé]/i;
+const FEMALE=/female|samantha|karen|moira|tessa|victoria|fiona|veena|serena|allison|\bava\b|susan|zira|hazel|catherine|m[oó]nica|paulina|marisol|soledad|helena|laura|sabina|elvira|dalia|luciana|francisca|google us english|google español de estados unidos/i;
+const MALE=/\bmale\b|^google español$|daniel|\balex\b|fred|rishi|oliver|arthur|aaron|\btom\b|david|\bmark\b|george|james|jorge|juan|diego|carlos|pablo|ra[uú]l|[aá]lvaro|enrique|jos[eé]/i;
 const isF=v=>FEMALE.test(v.name), isM=v=>!isF(v)&&MALE.test(v.name);
 function voicePool(lang){
   const NOVELTY=/bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|kathy|ralph|junior|eddy|\bflo\b|grandma|grandpa|\breed\b|rocko|sandy|shelley/i;
